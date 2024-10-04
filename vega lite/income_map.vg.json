@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 800,
+  "title": "Median Income Victoria",
+  "projection": { "type": "mercator"},
+  "data": {
+    "url": "victoria.json",
+    "format": {
+      "type": "topojson",
+      "feature": "suburb-2-vic"
+    }
+  },
+  "transform": [
+    {
+      "lookup": "properties.vic_loca_2",
+      "from": {
+        "data": {
+        "url": "Income VIC.csv"
+        },
+      "key": "suburb",
+      "fields": ["median3 taxable income 2021-22$"]
+      }
+    }
+  ],
+  "mark": {"type": "geoshape" },
+  "encoding": {
+    "color": {
+      "field": "median3 taxable income 2021-22$",
+      "type": "quantitative",
+      "scale": { "scheme": "blues"}
+    },
+  "tooltip":[
+    {"field": "properties.vic_loca_2", "type": "nominal", "title":"Suburb"},
+    {"field": "median3 taxable income 2021-22$", "type": "quantitative", "title": "Median Income"}
+    ] 
+  }
+}

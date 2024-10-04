@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 900,
+  "height": 710,
+  "data": {
+    "url": "traffic_pretty.json",
+    "format": {
+      "type": "topojson",
+      "feature": "Traffic_Volume"
+    }
+  },
+  "projection": {
+    "type": "mercator",
+    "scale": 30000, 
+    "center": [145, -37.8],
+    "translate": [400, 400] 
+  },
+  "encoding": {
+    "tooltip": [
+      {"field": "properties.HMGNS_LNK_DESC", "type": "nominal", "title": "Road"},
+      {"field": "properties.LGA_SHORT_NM", "type": "nominal", "title": "Council"},
+      {"field": "properties.ALLVEHS_AADT", "type": "quantitative", "title": "Annual Average Daily Traffic"}
+    ],
+    "color": {
+      "field": "properties.ALLVEHS_AADT",
+      "type": "quantitative",
+      "scale": {
+        "type": "linear",
+        "range": ["#ffcccc", "#fcbba1", "#fc9272", "#ff3333", "#ff0000", "#cb181d", "#990000"]
+      },
+      "title": "Average Daily Traffic"
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "geoshape",
+        "strokeWidth": 1,
+        "fill": null
+      },
+      "encoding": {
+        "color": {
+          "field": "properties.ALLVEHS_AADT",
+          "type": "quantitative",
+          "scale": {
+            "type": "linear",
+            "range": ["#ffcccc", "#fcbba1", "#fc9272", "#ff3333", "#ff0000", "#cb181d", "#990000"],
+            "domain": [0, 10000]
+          },
+          "title": "Annual Average Daily Traffic"
+        },
+        "stroke": {
+          "field": "properties.ALLVEHS_AADT",
+          "type": "quantitative",
+          "scale": {
+            "type": "linear",
+             "range": ["#ffcccc", "#fcbba1", "#fc9272", "#ff3333", "#ff0000", "#cb181d", "#990000"],
+            "domain": [0, 10000]
+          }
+        }
+      }
+    }
+  ]
+}
+
+
