@@ -33,7 +33,7 @@
   "layer": [
     {
       "data": {
-        "url": "../data/topojson/victoria.json",
+        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/topojson/victoria.json",
         "format": { "type": "topojson", "feature": "suburb-2-vic" }
       },
       "mark": { "type": "geoshape", "stroke": "slategray", "fill": "lightgray", "strokeWidth": 0.5 },
@@ -45,14 +45,14 @@
     },
     {
       "data": {
-        "url": "../data/topojson/victoria.json",
+        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/topojson/victoria.json",
         "format": { "type": "topojson", "feature": "suburb-2-vic" }
       },
       "transform": [
         {
           "lookup": "properties.vic_loca_2",
           "from": {
-            "data": { "url": "../data/csv/Income VIC.csv" },
+            "data": { "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/Income%20VIC.csv" },
             "key": "suburb",
             "fields": [
               "Median taxable income 2013-14",
@@ -83,12 +83,9 @@
         {
           "calculate": "toNumber(replace(replace(datum['Individuals ' + (year) + '-' + ((year+1)%100)], ',', ''), '\"', ''))",
           "as": "individuals_count"
-        },
-        {
-          "filter": "datum.median_income >= income_range"
         }
       ],
-      "mark": { "type": "geoshape"},
+      "mark": { "type": "geoshape" },
       "encoding": {
         "color": {
           "condition": {
@@ -99,7 +96,8 @@
               "scheme": "blues",
               "domain": [0,80000]
             }
-          }
+          },
+          "value": "lightgray"  
         },
         "tooltip": [
           { "field": "properties.vic_loca_2", "type": "nominal", "title": "Suburb" },

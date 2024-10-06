@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "1200",
-  "height": 800,
+  "width": "container",
+  "height": 500,
   "title": "Median Income Victoria",
   "projection": { "type": "mercator" },
   
@@ -33,10 +33,10 @@
   "layer": [
     {
       "data": {
-        "url": "../data/topojson/victoria.json",
+        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/topojson/victoria.json",
         "format": { "type": "topojson", "feature": "suburb-2-vic" }
       },
-      "mark": { "type": "geoshape", "stroke": "black", "fill": "lightgray", "strokeWidth": 0.5 },
+      "mark": { "type": "geoshape", "stroke": "slategray", "fill": "lightgray", "strokeWidth": 0.5 },
       "encoding": {
         "tooltip": [
           { "field": "properties.vic_loca_2", "type": "nominal", "title": "Suburb" }
@@ -45,14 +45,14 @@
     },
     {
       "data": {
-        "url": "../data/topojson/victoria.json",
+        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/topojson/victoria.json",
         "format": { "type": "topojson", "feature": "suburb-2-vic" }
       },
       "transform": [
         {
           "lookup": "properties.vic_loca_2",
           "from": {
-            "data": { "url": "../data/csv/Income VIC.csv" },
+            "data": { "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/Income%20VIC.csv" },
             "key": "suburb",
             "fields": [
               "Median taxable income 2013-14",
@@ -96,7 +96,8 @@
               "scheme": "blues",
               "domain": [0,80000]
             }
-          }
+          },
+          "value": "lightgray"  
         },
         "tooltip": [
           { "field": "properties.vic_loca_2", "type": "nominal", "title": "Suburb" },

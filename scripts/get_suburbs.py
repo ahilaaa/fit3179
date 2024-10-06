@@ -70,7 +70,7 @@ SUBURB_NAMES = [
 
 
 
-API_KEY = 'AIzaSyC0LEXboOhkj7MANJpXMUlM4EhdHXtv0uA'
+API_KEY = 'AI_____A'
 
 def get_suburb_coordinates():
     base_url = "https://maps.googleapis.com/maps/api/geocode/json"
