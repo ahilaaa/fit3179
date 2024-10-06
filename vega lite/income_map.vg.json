@@ -40,20 +40,20 @@
               "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/Income%20VIC.csv"
             },
             "key": "suburb",
-            "fields": ["individuals 2003-04 no."]
+            "fields": ["median3 taxable income 2021-22$"]
           }
         }
       ],
       "mark": { "type": "geoshape" },
       "encoding": {
         "color": {
-          "field": "individuals 2003-04 no.",
+          "field": "median3 taxable income 2021-22$",
           "type": "quantitative",
           "scale": { "scheme": "blues" }
         },
         "tooltip": [
           { "field": "properties.vic_loca_2", "type": "nominal", "title": "Suburb" },
-          { "field": "individuals 2003-04 no.", "type": "quantitative", "title": "Median Income" }
+          { "field": "median3 taxable income 2021-22$", "type": "quantitative", "title": "Median Income" }
         ]
       }
     }

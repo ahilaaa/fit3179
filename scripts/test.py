@@ -11,6 +11,7 @@ income_columns = [col for col in data.columns if '$' in col.lower() or 'individu
 for col in income_columns:
     data[col] = data[col].replace(',', '', regex=True).astype(int)
 
+
 # Save the cleaned data back to the same CSV file
 data.to_csv(file_path, index=False)
 
