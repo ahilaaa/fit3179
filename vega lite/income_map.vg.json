@@ -3,36 +3,59 @@
   "width": 500,
   "height": 800,
   "title": "Median Income Victoria",
-  "projection": { "type": "mercator"},
-  "data": {
-    "url": "victoria.json",
-    "format": {
-      "type": "topojson",
-      "feature": "suburb-2-vic"
-    }
-  },
-  "transform": [
+  "projection": { "type": "mercator" },
+  "layer": [
     {
-      "lookup": "properties.vic_loca_2",
-      "from": {
-        "data": {
-        "url": "Income VIC.csv"
+      "data": {
+        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/topojson/victoria.json",
+        "format": {
+          "type": "topojson",
+          "feature": "suburb-2-vic"
+        }
+      },
+      "mark": {
+      "type": "geoshape",
+      "stroke": "black",
+      "fill": "lightgray",
+      "strokeWidth": 0.5},
+      "encoding": {
+        "tooltip": [
+          { "field": "properties.vic_loca_2", "type": "nominal", "title": "Suburb" }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/topojson/victoria.json",
+        "format": {
+          "type": "topojson",
+          "feature": "suburb-2-vic"
+        }
+      },
+      "transform": [
+        {
+          "lookup": "properties.vic_loca_2",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/Income%20VIC.csv"
+            },
+            "key": "suburb",
+            "fields": ["individuals 2003-04 no."]
+          }
+        }
+      ],
+      "mark": { "type": "geoshape" },
+      "encoding": {
+        "color": {
+          "field": "individuals 2003-04 no.",
+          "type": "quantitative",
+          "scale": { "scheme": "blues" }
         },
-      "key": "suburb",
-      "fields": ["median3 taxable income 2021-22$"]
+        "tooltip": [
+          { "field": "properties.vic_loca_2", "type": "nominal", "title": "Suburb" },
+          { "field": "individuals 2003-04 no.", "type": "quantitative", "title": "Median Income" }
+        ]
       }
     }
-  ],
-  "mark": {"type": "geoshape" },
-  "encoding": {
-    "color": {
-      "field": "median3 taxable income 2021-22$",
-      "type": "quantitative",
-      "scale": { "scheme": "blues"}
-    },
-  "tooltip":[
-    {"field": "properties.vic_loca_2", "type": "nominal", "title":"Suburb"},
-    {"field": "median3 taxable income 2021-22$", "type": "quantitative", "title": "Median Income"}
-    ] 
-  }
+  ]
 }
