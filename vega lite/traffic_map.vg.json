@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 800,
-  "height": 710,
+  "width": "container",
+  "height": 500,
   "data": {
-    "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/topojson/traffic_pretty.json",
+    "url": "../data/topojson/traffic_pretty.json",
     "format": {
       "type": "topojson",
       "feature": "Traffic_Volume"

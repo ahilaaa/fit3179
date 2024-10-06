@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container",
-  "height": 500,
+  "width": "1200",
+  "height": 800,
   "title": "Median Income Victoria",
   "projection": { "type": "mercator" },
   
@@ -36,7 +36,7 @@
         "url": "../data/topojson/victoria.json",
         "format": { "type": "topojson", "feature": "suburb-2-vic" }
       },
-      "mark": { "type": "geoshape", "stroke": "slategray", "fill": "lightgray", "strokeWidth": 0.5 },
+      "mark": { "type": "geoshape", "stroke": "black", "fill": "lightgray", "strokeWidth": 0.5 },
       "encoding": {
         "tooltip": [
           { "field": "properties.vic_loca_2", "type": "nominal", "title": "Suburb" }
@@ -83,12 +83,9 @@
         {
           "calculate": "toNumber(replace(replace(datum['Individuals ' + (year) + '-' + ((year+1)%100)], ',', ''), '\"', ''))",
           "as": "individuals_count"
-        },
-        {
-          "filter": "datum.median_income >= income_range"
         }
       ],
-      "mark": { "type": "geoshape"},
+      "mark": { "type": "geoshape" },
       "encoding": {
         "color": {
           "condition": {
@@ -110,3 +107,5 @@
     }
   ]
 }
+
+
