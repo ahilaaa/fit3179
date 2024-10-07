@@ -150,6 +150,7 @@ def get_locations(query, location, radius):
 # Main execution
 if __name__ == "__main__":
     # Replace with your Google API Key
+    API_KEY = 'Google API Key'
 
     # Get the suburb coordinates
     suburb_coordinates = get_suburb_coordinates()
