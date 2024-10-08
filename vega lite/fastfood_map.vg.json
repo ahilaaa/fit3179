@@ -16,7 +16,7 @@
         "value": 5000,
         "bind": {
           "input": "range",
-          "min": 1000,
+          "min": 5000,
           "max": 100000,
           "step": 100,
           "name": "zoom"
@@ -32,7 +32,7 @@
       "type": "geoshape",
       "stroke": "#7b919c",
       "fill": "#d1e0e8",
-      "strokeWidth": 0.5
+      "strokeWidth": 0.3
     },
     "encoding": {
       "tooltip": {"field": "properties.vic_loca_2", "type": "nominal"}
