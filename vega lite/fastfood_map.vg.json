@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 800,
+    "width": 1000,
     "height": 800,
-    "title": "Map of Victoria with Zoom",
+    "title": "Map of Victoria with McDonald's Locations",
     "data": {
       "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/topojson/victoria.json", 
       "format": {
@@ -13,11 +13,11 @@
     "params": [
       {
         "name": "zoomLevel",
-        "value": 5000,
+        "value": 30000,
         "bind": {
           "input": "range",
           "min": 5000,
-          "max": 100000,
+          "max": 150000,
           "step": 100,
           "name": "zoom"
         }
@@ -26,15 +26,37 @@
     "projection": {
       "type": "mercator",
       "scale": {"expr": "zoomLevel"},
-      "center": [144.9631, -37.8136] 
+      "center": [144.9631, -37.8136]
     },
-    "mark": {
-      "type": "geoshape",
-      "stroke": "#7b919c",
-      "fill": "#d1e0e8",
-      "strokeWidth": 0.3
-    },
-    "encoding": {
-      "tooltip": {"field": "properties.vic_loca_2", "type": "nominal"}
-    }
+    "layer": [
+      {
+        "mark": {
+          "type": "geoshape",
+          "stroke": "#7b919c",
+          "fill": "#d1e0e8",
+          "strokeWidth": 0.3
+        },
+        "encoding": {
+          "tooltip": {"field": "properties.vic_loca_2", "type": "nominal"}
+        }
+      },
+      {
+        "data": {
+          "url": "../data/csv/McDonald's Locations.csv",
+          "format": {"type": "csv"}
+        },
+        "mark": {
+          "type": "image",
+          "width":  10, 
+          "height": 10,
+          "url": "../data/icons/mcdonald's.png"
+        },
+        "encoding": {
+          "longitude": {"field": "Longitude", "type": "quantitative"},
+          "latitude": {"field": "Latitude", "type": "quantitative"},
+          "tooltip": [{"field": "Name", "type": "nominal"}]
+        }
+      }
+    ]
   }
+  

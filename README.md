@@ -12,3 +12,7 @@ https://www.matthewproctor.com/ - geo information for all suburbs
 
 
 press RAW on data source, copy link up top into vega editor
+
+
+
+https://upload.wikimedia.org/wikipedia/commons/3/36/McDonald%27s_Golden_Arches.svg - mcdonalds bare icon
