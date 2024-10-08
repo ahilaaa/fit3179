@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 1000,
     "height": 800,
-    "title": "Map of Victoria with McDonald's Locations",
+    "title": "Map of Victoria with McDonald's, Hungry Jack's, and KFC Locations",
     "data": {
       "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/topojson/victoria.json", 
       "format": {
@@ -47,9 +47,43 @@
         },
         "mark": {
           "type": "image",
-          "width":  10, 
+          "width": 10,
           "height": 10,
-          "url": "../data/icons/mcdonald's.png"
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/McDonald%27s_SVG_logo.svg"
+        },
+        "encoding": {
+          "longitude": {"field": "Longitude", "type": "quantitative"},
+          "latitude": {"field": "Latitude", "type": "quantitative"},
+          "tooltip": [{"field": "Name", "type": "nominal"}]
+        }
+      },
+      {
+        "data": {
+          "url": "../data/csv/Hungry Jack's Locations.csv",
+          "format": {"type": "csv"}
+        },
+        "mark": {
+          "type": "image",
+          "width": 10,
+          "height": 10,
+          "url": "https://upload.wikimedia.org/wikipedia/en/2/20/HungryJacksLogo_RGB_local.svg"
+        },
+        "encoding": {
+          "longitude": {"field": "Longitude", "type": "quantitative"},
+          "latitude": {"field": "Latitude", "type": "quantitative"},
+          "tooltip": [{"field": "Name", "type": "nominal"}]
+        }
+      },
+      {
+        "data": {
+          "url": "../data/csv/KFC Locations.csv",
+          "format": {"type": "csv"}
+        },
+        "mark": {
+          "type": "image",
+          "width": 10,
+          "height": 10,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/KFC_Logo.svg"
         },
         "encoding": {
           "longitude": {"field": "Longitude", "type": "quantitative"},

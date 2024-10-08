@@ -1,0 +1,149 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 1000,
+  "height": 700,
+  "title": "Median Income and Fast Food Locations in Victoria",
+  "params": [
+    {
+      "name": "income_range",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 80000,
+        "step": 1000,
+        "name": "SELECT Minimum Median Income"
+      }
+    },
+    {
+      "name": "year",
+      "value": 2021,
+      "bind": {
+        "input": "range",
+        "min": 2013,
+        "max": 2021,
+        "step": 1,
+        "name": "SELECT Year"
+      }
+    },
+    {
+      "name": "zoomLevel",
+      "value": 5000,
+      "bind": {
+        "input": "range",
+        "min": 5000,
+        "max": 100000,
+        "step": 100,
+        "name": "SELECT Zoom"
+      }
+    }
+  ],
+  "projection": {
+    "type": "mercator",
+    "scale": {"expr": "zoomLevel"},
+    "center": [144.9631, -37.8136]
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/topojson/victoria.json",
+        "format": {"type": "topojson", "feature": "suburb-2-vic"}
+      },
+      "mark": {"type": "geoshape", "stroke": "slategray", "fill": "lightgray", "strokeWidth": 0.3},
+      "encoding": {
+        "tooltip": [
+          {"field": "properties.vic_loca_2", "type": "nominal", "title": "Suburb"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/topojson/victoria.json",
+        "format": {"type": "topojson", "feature": "suburb-2-vic"}
+      },
+      "transform": [
+        {
+          "lookup": "properties.vic_loca_2",
+          "from": {
+            "data": {"url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/Income%20VIC.csv"},
+            "key": "suburb",
+            "fields": ["Median taxable income 2021-22"]
+          }
+        },
+        {
+          "calculate": "toNumber(replace(datum['Median taxable income 2021-22'], ',', ''))",
+          "as": "median_income"
+        }
+      ],
+      "mark": {"type": "geoshape", "stroke": "#7b919c", "strokeWidth": 0.3},
+      "encoding": {
+        "color": {
+          "field": "median_income",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 30000, 40000, 50000, 60000, 70000, 80000],
+            "range": ["#f7fbff", "#c6dbef", "#9ecae1", "#6baed6", "#3182bd", "#08519c", "#08306b"]
+          }
+
+        },
+        "tooltip": [
+          {"field": "properties.vic_loca_2", "type": "nominal", "title": "Suburb"},
+          {"field": "median_income", "type": "quantitative", "title": "Median Income"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "../data/csv/McDonald's Locations.csv",
+        "format": {"type": "csv"}
+      },
+      "mark": {
+        "type": "image",
+        "width": 10,
+        "height": 10,
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/McDonald%27s_SVG_logo.svg"
+      },
+      "encoding": {
+        "longitude": {"field": "Longitude", "type": "quantitative"},
+        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "tooltip": [{"field": "Name", "type": "nominal"}]
+      }
+    },
+    {
+      "data": {
+        "url": "../data/csv/Hungry Jack's Locations.csv",
+        "format": {"type": "csv"}
+      },
+      "mark": {
+        "type": "image",
+        "width": 10,
+        "height": 10,
+        "url": "https://upload.wikimedia.org/wikipedia/en/2/20/HungryJacksLogo_RGB_local.svg"
+      },
+      "encoding": {
+        "longitude": {"field": "Longitude", "type": "quantitative"},
+        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "tooltip": [{"field": "Name", "type": "nominal"}]
+      }
+    },
+    {
+      "data": {
+        "url": "../data/csv/KFC Locations.csv",
+        "format": {"type": "csv"}
+      },
+      "mark": {
+        "type": "image",
+        "width": 10,
+        "height": 10,
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/KFC_Logo.svg"
+      },
+      "encoding": {
+        "longitude": {"field": "Longitude", "type": "quantitative"},
+        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "tooltip": [{"field": "Name", "type": "nominal"}]
+      }
+    }
+  ]
+}
+
+  

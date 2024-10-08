@@ -1,6 +1,5 @@
 import requests
 import csv
-from get_suburbs import SUBURB_NAMES
 import pandas as pd
 
 
@@ -13,7 +12,9 @@ def get_results(query):
 
     testing = 0
 
-    for suburb_name in SUBURB_NAMES:
+    vic_data = pd.read_csv("/Users/ahila/Desktop/fit3179/data/csv/Suburbs VIC.csv")
+
+    for suburb_name in vic_data["suburb"]:
         print(f"Searching {suburb_name}")
         params = {
             "query": query + " " + suburb_name,
@@ -92,11 +93,6 @@ def keep_vic_results(filename):
 
 
 
-
-
-
-
-
 # Main execution
 if __name__ == "__main__":
     # Replace with your Google API Key
@@ -104,7 +100,7 @@ if __name__ == "__main__":
     
     #fast_food = ["KFC", "Hungry Jack's", "McDonald's"]
 
-    fast_food = ["KFC", "Hungry Jack's"]
+    fast_food = ["McDonald's"] #, "KFC", "Hungry Jack's"]
 
 
     # get fast food locations for every suburb
@@ -115,9 +111,11 @@ if __name__ == "__main__":
 
         locations = remove_duplicates(locations)
         print(f"Total {query} locations found AFTER : {len(locations)}")
+
         # Save the results to a CSV file
         filename = query + " Locations.csv"
         save_to_csv(locations, filename)
+        
         keep_vic_results(filename)
 
 
