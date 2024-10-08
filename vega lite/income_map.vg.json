@@ -12,7 +12,7 @@
         "min": 0,
         "max": 80000,
         "step": 1000,
-        "name": "Minimum Median Income"
+        "name": "SELECT Minimum Median Income"
       }
     },
     {
@@ -23,7 +23,7 @@
         "min": 2013,
         "max": 2021,
         "step": 1,
-        "name": "Year"
+        "name": "SELECT Year"
       }
     },
     {
@@ -32,9 +32,9 @@
       "bind": {
         "input": "range",
         "min": 5000,
-        "max": 30000,
+        "max": 100000,
         "step": 100,
-        "name": "zoom"
+        "name": "SELECT Zoom"
       }
     }
   ],
@@ -50,7 +50,7 @@
         "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/topojson/victoria.json",
         "format": { "type": "topojson", "feature": "suburb-2-vic" }
       },
-      "mark": { "type": "geoshape", "stroke": "slategray", "fill": "lightgray", "strokeWidth": 0.5 },
+      "mark": { "type": "geoshape", "stroke": "slategray", "fill": "lightgray", "strokeWidth": 0.3 },
       "encoding": {
         "tooltip": [
           { "field": "properties.vic_loca_2", "type": "nominal", "title": "Suburb" }
@@ -99,7 +99,7 @@
           "as": "individuals_count"
         }
       ],
-      "mark": { "type": "geoshape" },
+      "mark": { "type": "geoshape", "stroke": "#7b919c", "strokeWidth": 0.3},
       "encoding": {
         "color": {
           "condition": {
