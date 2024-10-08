@@ -1,0 +1,24 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 800,
+    "title": "victoria",
+    "data": {
+      "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/topojson/victoria.json", 
+      "format": {
+        "type": "topojson",
+        "feature": "suburb-2-vic"
+      }
+    },
+    "projection": { "type": "mercator"},
+    "mark": {
+      "type": "geoshape",
+      "stroke": "#7b919c",
+      "fill": "#d1e0e8",
+      "strokeWidth": 0.5
+  
+    },
+    "encoding": {
+      "tooltip": {"field": "properties.vic_loca_2", "type": "nominal"}  
+    }
+  }

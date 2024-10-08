@@ -3,8 +3,6 @@
   "width": 1000,
   "height": 500,
   "title": "Median Income Victoria",
-  "projection": { "type": "mercator" },
-  
   "params": [
     {
       "name": "income_range",
@@ -27,8 +25,24 @@
         "step": 1,
         "name": "Year"
       }
+    },
+    {
+      "name": "zoomLevel",
+      "value": 5000,
+      "bind": {
+        "input": "range",
+        "min": 5000,
+        "max": 30000,
+        "step": 100,
+        "name": "zoom"
+      }
     }
   ],
+  "projection": {
+    "type": "mercator",
+    "scale": {"expr": "zoomLevel"},
+    "center": [144.9631, -37.8136] 
+  },
   
   "layer": [
     {
