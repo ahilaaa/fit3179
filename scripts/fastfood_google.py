@@ -93,19 +93,15 @@ def keep_vic_results(filename):
 
 
 
-
+# Replace with Google API Key
 API_KEY = ' API KEY '
 
 
 '''
 # Main execution
 if __name__ == "__main__":
-    # Replace with your Google API Key
-    API_KEY = ' API KEY '
     
-    #fast_food = ["KFC", "Hungry Jack's", "McDonald's"]
-
-    fast_food = ["KFC", "Hungry Jack's"]
+    fast_food = ["KFC", "Hungry Jack's", "McDonald's"]
 
 
     # get fast food locations for every suburb
@@ -121,7 +117,7 @@ if __name__ == "__main__":
         filename = query + " Locations.csv"
         save_to_csv(locations, filename)
 
-        keep_vic_results(filename)
+        keep_vic_results(filename) # not 100% accurate, some NSW results still show up
         
 
         '''

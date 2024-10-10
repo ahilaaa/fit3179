@@ -55,7 +55,10 @@
         "encoding": {
           "longitude": {"field": "Longitude", "type": "quantitative"},
           "latitude": {"field": "Latitude", "type": "quantitative"},
-          "tooltip": [{"field": "Name", "type": "nominal"}]
+          "tooltip": [
+          {"field": "Name", "type": "nominal"},
+          {"field": "Suburb", "type": "nominal"}
+        ]
         }
       }
     ]
