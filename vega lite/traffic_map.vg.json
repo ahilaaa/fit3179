@@ -1,112 +1,112 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 800,
-  "height": 800,
-  "title": "Traffic Volume: Victoria",
-  "data": {
-    "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/topojson/victoria.json",
-    "format": {
-      "type": "topojson",
-      "feature": "suburb-2-vic"
-    }
-  },
-  "params": [
-    {
-      "name": "zoomLevel",
-      "value": 5000,
-      "bind": {
-        "input": "range",
-        "min": 5000,
-        "max": 100000,
-        "step": 100,
-        "name": "zoom"
-      }
-    }
-  ],
-  "projection": {
-    "type": "mercator",
-    "scale": {"expr": "zoomLevel"},
-    "center": [144.9631, -37.8136]
-  },
-  "layer": [
-    {
-      "mark": {
-        "type": "geoshape",
-        "stroke": "#cbeef7",
-        "fill": "#bcdde6",
-        "strokeWidth": 0.5
-      },
-      "encoding": {
-        "tooltip": {"field": "properties.vic_loca_2", "type": "nominal"}
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 800,
+    "title": "Traffic Volume: Victoria",
+    "data": {
+      "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/topojson/victoria.json",
+      "format": {
+        "type": "topojson",
+        "feature": "suburb-2-vic"
       }
     },
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/topojson/traffic_pretty.json",
-        "format": {
-          "type": "topojson",
-          "feature": "Traffic_Volume"
+    "params": [
+      {
+        "name": "zoomLevel",
+        "value": 5000,
+        "bind": {
+          "input": "range",
+          "min": 5000,
+          "max": 100000,
+          "step": 100,
+          "name": "zoom"
+        }
+      }
+    ],
+    "projection": {
+      "type": "mercator",
+      "scale": {"expr": "zoomLevel"},
+      "center": [144.9631, -37.8136]
+    },
+    "layer": [
+      {
+        "mark": {
+          "type": "geoshape",
+          "stroke": "#cbeef7",
+          "fill": "#bcdde6",
+          "strokeWidth": 0.5
+        },
+        "encoding": {
+          "tooltip": {"field": "properties.vic_loca_2", "type": "nominal"}
         }
       },
-      "mark": {
-        "type": "geoshape",
-        "strokeWidth": 1,
-        "fill": null
-      },
-      "encoding": {
-        "color": {
-          "field": "properties.ALLVEHS_AADT",
-          "type": "quantitative",
-          "scale": {
-            "type": "threshold",
-            "domain": [0, 2000, 4000, 6000, 8000, 10000, 12000, 14000, 15000],
-            "range": [
-              "#ffcccc", 
-              "#fcbba1", 
-              "#fc9272", 
-              "#fb6a4a", 
-              "#ef3b2c", 
-              "#cb181d", 
-              "#a50f15", 
-              "#67000d", 
-              "#49000d",
-              "#330000"
-            ]
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/topojson/traffic_pretty.json",
+          "format": {
+            "type": "topojson",
+            "feature": "Traffic_Volume"
+          }
+        },
+        "mark": {
+          "type": "geoshape",
+          "strokeWidth": 1,
+          "fill": null
+        },
+        "encoding": {
+          "color": {
+            "field": "properties.ALLVEHS_AADT",
+            "type": "quantitative",
+            "scale": {
+              "type": "threshold",
+              "domain": [0, 2000, 4000, 6000, 8000, 10000, 12000, 14000, 15000],
+              "range": [
+                "#ffcccc", 
+                "#fcbba1", 
+                "#fc9272", 
+                "#fb6a4a", 
+                "#ef3b2c", 
+                "#cb181d", 
+                "#a50f15", 
+                "#67000d", 
+                "#49000d",
+                "#330000"
+              ]
+            },
+            "legend": {
+              "title": "Annual Average Daily Traffic",
+              "orient": "right"
+            }
           },
-          "legend": {
-            "title": "Annual Average Daily Traffic",
-            "orient": "right"
-          }
-        },
-        "stroke": {
-          "field": "properties.ALLVEHS_AADT",
-          "type": "quantitative",
-          "scale": {
-            "type": "threshold",
-            "domain": [0, 2000, 4000, 6000, 8000, 10000, 12000, 14000, 15000],
-            "range": [
-              "#ffcccc", 
-              "#fcbba1", 
-              "#fc9272", 
-              "#fb6a4a", 
-              "#ef3b2c", 
-              "#cb181d", 
-              "#a50f15", 
-              "#67000d", 
-              "#49000d",
-              "#330000"
-            ]
-          }
-        },
-        "tooltip": [
-          {"field": "properties.HMGNS_LNK_DESC", "type": "nominal", "title": "Road"},
-          {"field": "properties.LGA_SHORT_NM", "type": "nominal", "title": "Council"},
-          {"field": "properties.ALLVEHS_AADT", "type": "quantitative", "title": "Annual Average Daily Traffic"}
-        ]
+          "stroke": {
+            "field": "properties.ALLVEHS_AADT",
+            "type": "quantitative",
+            "scale": {
+              "type": "threshold",
+              "domain": [0, 2000, 4000, 6000, 8000, 10000, 12000, 14000, 15000],
+              "range": [
+                "#ffcccc", 
+                "#fcbba1", 
+                "#fc9272", 
+                "#fb6a4a", 
+                "#ef3b2c", 
+                "#cb181d", 
+                "#a50f15", 
+                "#67000d", 
+                "#49000d",
+                "#330000"
+              ]
+            }
+          },
+          "tooltip": [
+            {"field": "properties.HMGNS_LNK_DESC", "type": "nominal", "title": "Road"},
+            {"field": "properties.LGA_SHORT_NM", "type": "nominal", "title": "Council"},
+            {"field": "properties.ALLVEHS_AADT", "type": "quantitative", "title": "Annual Average Daily Traffic"}
+          ]
+        }
       }
-    }
-  ]
-}
+    ]
+  }
 
 
 
