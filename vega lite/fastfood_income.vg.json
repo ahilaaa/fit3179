@@ -5,6 +5,17 @@
   "title": "Median Income and Fast Food Locations in Victoria",
   "params": [
     {
+      "name": "zoomLevel",
+      "value": 10000,
+      "bind": {
+        "input": "range",
+        "min": 5000,
+        "max": 100000,
+        "step": 100,
+        "name": "SELECT Zoom"
+      }
+    },
+    {
       "name": "income_range",
       "value": 0,
       "bind": {
@@ -21,20 +32,23 @@
       "bind": {
         "input": "range",
         "min": 2013,
-        "max": 2021,
+        "max": 2022,
         "step": 1,
         "name": "SELECT Year"
       }
     },
     {
-      "name": "zoomLevel",
-      "value": 5000,
+      "name": "selectedChains",
+      "value": ["McDonald's", "KFC", "Hungry Jack's"],
       "bind": {
-        "input": "range",
-        "min": 5000,
-        "max": 100000,
-        "step": 100,
-        "name": "SELECT Zoom"
+        "input": "select",
+        "options": [
+          "McDonald's",
+          "KFC",
+          "Hungry Jack's",
+          "All"
+        ],
+        "name": "SELECT Fast Food Chains"
       }
     }
   ],
@@ -67,28 +81,55 @@
           "from": {
             "data": {"url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/Income%20VIC.csv"},
             "key": "suburb",
-            "fields": ["Median taxable income 2021-22"]
+            "fields": [
+              "Median taxable income 2013-14",
+              "Median taxable income 2014-15",
+              "Median taxable income 2015-16",
+              "Median taxable income 2016-17",
+              "Median taxable income 2017-18",
+              "Median taxable income 2018-19",
+              "Median taxable income 2019-20",
+              "Median taxable income 2020-21",
+              "Median taxable income 2021-22",
+              "Individuals 2013-14",
+              "Individuals 2014-15",
+              "Individuals 2015-16",
+              "Individuals 2016-17",
+              "Individuals 2017-18",
+              "Individuals 2018-19",
+              "Individuals 2019-20",
+              "Individuals 2020-21",
+              "Individuals 2021-22"
+            ]
           }
         },
         {
-          "calculate": "toNumber(replace(datum['Median taxable income 2021-22'], ',', ''))",
+          "calculate": "toNumber(replace(replace(datum['Median taxable income ' + (year) + '-' + ((year+1)%100)], ',', ''), '\"', ''))",
           "as": "median_income"
+        },
+        {
+          "calculate": "toNumber(replace(replace(datum['Individuals ' + (year) + '-' + ((year+1)%100)], ',', ''), '\"', ''))",
+          "as": "individuals_count"
         }
       ],
       "mark": {"type": "geoshape", "stroke": "#7b919c", "strokeWidth": 0.3},
       "encoding": {
         "color": {
-          "field": "median_income",
-          "type": "quantitative",
-          "scale": {
-            "domain": [0, 20000, 25000, 30000, 40000, 50000, 60000, 70000, 80000],
-            "range": ["#f7fbff", "#deebf7", "#c6dbef", "#9ecae1", "#6baed6", "#3182bd", "#08519c", "#08306b", "#081d58"]
-          }
-
+          "condition": {
+            "test": "datum.median_income >= income_range",
+            "field": "median_income",
+            "type": "quantitative",
+            "scale": {
+              "domain": [0, 20000, 25000, 30000, 40000, 50000, 60000, 70000, 80000],
+              "range": ["#f7fbff", "#deebf7", "#c6dbef", "#9ecae1", "#6baed6", "#3182bd", "#08519c", "#08306b", "#081d58"]
+            }
+          },
+          "value": "lightgray"
         },
         "tooltip": [
           {"field": "properties.vic_loca_2", "type": "nominal", "title": "Suburb"},
-          {"field": "median_income", "type": "quantitative", "title": "Median Income"}
+          {"field": "median_income", "type": "quantitative", "title": "Median Income"},
+          { "field": "individuals_count", "type": "quantitative", "title": "Population"}
         ]
       }
     },
@@ -97,10 +138,15 @@
         "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/Hungry%20Jack's%20Locations.csv",
         "format": {"type": "csv"}
       },
+      "transform": [
+        {
+          "filter": "selectedChains === 'All' || indexof(selectedChains, 'Hungry Jack\\'s') > -1"
+        }
+      ],
       "mark": {
         "type": "image",
-        "width": 10,
-        "height": 10,
+        "width": 11,
+        "height": 11,
         "url": "https://upload.wikimedia.org/wikipedia/en/2/20/HungryJacksLogo_RGB_local.svg"
       },
       "encoding": {
@@ -114,12 +160,16 @@
         "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/KFC%20Locations.csv",
         "format": {"type": "csv"}
       },
+      "transform": [
+        {
+          "filter": "selectedChains === 'All' || indexof(selectedChains, 'KFC') > -1"
+        }
+      ],
       "mark": {
         "type": "image",
-        "width": 14,
-        "height": 14,
+        "width": 15,
+        "height": 15,
         "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/KFC_Logo.svg"
-
       },
       "encoding": {
         "longitude": {"field": "Longitude", "type": "quantitative"},
@@ -132,6 +182,11 @@
         "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/McDonald's%20Locations.csv",
         "format": {"type": "csv"}
       },
+      "transform": [
+        {
+          "filter": "selectedChains === 'All' || indexof(selectedChains, 'McDonald\\'s') > -1"
+        }
+      ],
       "mark": {
         "type": "image",
         "width": 10,

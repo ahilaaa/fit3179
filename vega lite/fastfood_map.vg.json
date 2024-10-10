@@ -40,40 +40,7 @@
           "tooltip": {"field": "properties.vic_loca_2", "type": "nominal"}
         }
       },
-      {
-        "data": {
-          "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/main/data/png/HungryJack%27s%20Logo.png",
-          "format": {"type": "csv"}
-        },
-        "mark": {
-          "type": "image",
-          "width": 10,
-          "height": 10,
-          "url": "https://upload.wikimedia.org/wikipedia/en/2/20/HungryJacksLogo_RGB_local.svg"
-        },
-        "encoding": {
-          "longitude": {"field": "Longitude", "type": "quantitative"},
-          "latitude": {"field": "Latitude", "type": "quantitative"},
-          "tooltip": [{"field": "Name", "type": "nominal"}]
-        }
-      },
-      {
-        "data": {
-          "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/KFC%20Locations.csv",
-          "format": {"type": "csv"}
-        },
-        "mark": {
-          "type": "image",
-          "width": 10,
-          "height": 10,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/KFC_Logo.svg"
-        },
-        "encoding": {
-          "longitude": {"field": "Longitude", "type": "quantitative"},
-          "latitude": {"field": "Latitude", "type": "quantitative"},
-          "tooltip": [{"field": "Name", "type": "nominal"}]
-        }
-      },
+      
       {
         "data": {
           "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/McDonald's%20Locations.csv",
@@ -83,7 +50,7 @@
           "type": "image",
           "width": 10,
           "height": 10,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/McDonald%27s_SVG_logo.svg"
+          "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/png/McDonald's%20logo.png"
         },
         "encoding": {
           "longitude": {"field": "Longitude", "type": "quantitative"},
