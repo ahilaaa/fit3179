@@ -1,0 +1,39 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "../data/csv/Council Income FastFood.csv",
+      "format": {"type": "csv"}
+    },
+    "transform": [
+      {
+        "calculate": "datum['McDonald\\'s Count']",
+        "as": "Total McDonalds Locations"
+      }
+    ],
+    "mark": "circle",
+    "encoding": {
+      "x": {
+        "field": "Median taxable income 2021-22",
+        "type": "quantitative",
+        "title": "Median Income (2021-22)"
+      },
+      "y": {
+        "field": "Total McDonalds Locations",
+        "type": "quantitative",
+        "title": "Total McDonald's Locations"
+      },
+      "size": {
+        "field": "Individuals 2021-22",
+        "type": "quantitative",
+        "title": "Number of Individuals",
+        "scale": {"range": [10, 1000]}
+      },
+      "tooltip": [
+        {"field": "council", "type": "nominal", "title": "Council"},
+        {"field": "Median taxable income 2021-22", "type": "quantitative", "title": "Median Income"},
+        {"field": "Total McDonalds Locations", "type": "quantitative", "title": "Total McDonald's Locations"},
+        {"field": "Individuals 2021-22", "type": "quantitative", "title": "Individuals"}
+      ]
+    }
+  }
+  
