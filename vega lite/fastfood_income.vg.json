@@ -12,7 +12,7 @@
         "min": 5000,
         "max": 100000,
         "step": 100,
-        "name": "SELECT Zoom "
+        "name": "Zoom "
       }
     },
     {
@@ -34,7 +34,7 @@
         "min": 2013,
         "max": 2022,
         "step": 1,
-        "name": "SELECT Year "
+        "name": "SELECT Year Median Income"
       }
     },
     {
