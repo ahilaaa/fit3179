@@ -42,7 +42,7 @@
       },
       {
         "data": {
-          "url": "../data/csv/McDonald's Locations.csv",
+          "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/McDonald's%20Locations.csv",
           "format": {"type": "csv"}
         },
         "mark": {
@@ -59,7 +59,7 @@
       },
       {
         "data": {
-          "url": "../data/csv/Hungry Jack's Locations.csv",
+          "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/Hungry%20Jack's%20Locations.csv",
           "format": {"type": "csv"}
         },
         "mark": {
@@ -76,7 +76,7 @@
       },
       {
         "data": {
-          "url": "../data/csv/KFC Locations.csv",
+          "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/KFC%20Locations.csv",
           "format": {"type": "csv"}
         },
         "mark": {
