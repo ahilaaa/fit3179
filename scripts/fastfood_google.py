@@ -94,12 +94,14 @@ def keep_vic_results(filename):
 
 
 
+API_KEY = ' API KEY '
+
 
 '''
 # Main execution
 if __name__ == "__main__":
     # Replace with your Google API Key
-    API_KEY = 'AIzaSyC0LEXboOhkj7MANJpXMUlM4EhdHXtv0uA'
+    API_KEY = ' API KEY '
     
     #fast_food = ["KFC", "Hungry Jack's", "McDonald's"]
 
