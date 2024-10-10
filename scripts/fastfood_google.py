@@ -92,7 +92,20 @@ def keep_vic_results(filename):
 
 
 
+def remove_first_column(filename):
 
+    # Read the CSV file
+    df = pd.read_csv(filename)
+
+    # Drop the first column
+    df = df.iloc[:, 1:]
+
+    # Save the modified DataFrame to a new CSV file
+    df.to_csv(filename)
+
+
+
+'''
 # Main execution
 if __name__ == "__main__":
     # Replace with your Google API Key
@@ -100,7 +113,7 @@ if __name__ == "__main__":
     
     #fast_food = ["KFC", "Hungry Jack's", "McDonald's"]
 
-    fast_food = ["McDonald's"] #, "KFC", "Hungry Jack's"]
+    fast_food = ["KFC", "Hungry Jack's"]
 
 
     # get fast food locations for every suburb
@@ -115,8 +128,12 @@ if __name__ == "__main__":
         # Save the results to a CSV file
         filename = query + " Locations.csv"
         save_to_csv(locations, filename)
-        
+
         keep_vic_results(filename)
+        
+
+        '''
+
 
 
 
