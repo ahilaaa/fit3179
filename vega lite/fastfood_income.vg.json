@@ -12,7 +12,7 @@
         "min": 5000,
         "max": 100000,
         "step": 100,
-        "name": "SELECT Zoom"
+        "name": "SELECT Zoom "
       }
     },
     {
@@ -23,7 +23,7 @@
         "min": 0,
         "max": 80000,
         "step": 1000,
-        "name": "SELECT Minimum Median Income"
+        "name": "SELECT Minimum Median Income "
       }
     },
     {
@@ -34,7 +34,7 @@
         "min": 2013,
         "max": 2022,
         "step": 1,
-        "name": "SELECT Year"
+        "name": "SELECT Year "
       }
     },
     {
@@ -48,7 +48,7 @@
           "Hungry Jack's",
           "All"
         ],
-        "name": "SELECT Fast Food Chains"
+        "name": "SELECT Fast Food Chains "
       }
     }
   ],
@@ -145,8 +145,8 @@
       ],
       "mark": {
         "type": "image",
-        "width": 11,
-        "height": 11,
+        "width": 8,
+        "height": 8,
         "url": "https://upload.wikimedia.org/wikipedia/en/2/20/HungryJacksLogo_RGB_local.svg"
       },
       "encoding": {
@@ -167,8 +167,8 @@
       ],
       "mark": {
         "type": "image",
-        "width": 15,
-        "height": 15,
+        "width": 12,
+        "height": 12,
         "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/KFC_Logo.svg"
       },
       "encoding": {
@@ -189,8 +189,8 @@
       ],
       "mark": {
         "type": "image",
-        "width": 10,
-        "height": 10,
+        "width": 8,
+        "height": 8,
         "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/McDonald%27s_SVG_logo.svg"
       },
       "encoding": {
