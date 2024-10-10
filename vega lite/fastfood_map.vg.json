@@ -42,24 +42,7 @@
       },
       {
         "data": {
-          "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/McDonald's%20Locations.csv",
-          "format": {"type": "csv"}
-        },
-        "mark": {
-          "type": "image",
-          "width": 10,
-          "height": 10,
-          "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/McDonald%27s_SVG_logo.svg"
-        },
-        "encoding": {
-          "longitude": {"field": "Longitude", "type": "quantitative"},
-          "latitude": {"field": "Latitude", "type": "quantitative"},
-          "tooltip": [{"field": "Name", "type": "nominal"}]
-        }
-      },
-      {
-        "data": {
-          "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/Hungry%20Jack's%20Locations.csv",
+          "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/main/data/png/HungryJack%27s%20Logo.png",
           "format": {"type": "csv"}
         },
         "mark": {
@@ -84,6 +67,23 @@
           "width": 10,
           "height": 10,
           "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/KFC_Logo.svg"
+        },
+        "encoding": {
+          "longitude": {"field": "Longitude", "type": "quantitative"},
+          "latitude": {"field": "Latitude", "type": "quantitative"},
+          "tooltip": [{"field": "Name", "type": "nominal"}]
+        }
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/McDonald's%20Locations.csv",
+          "format": {"type": "csv"}
+        },
+        "mark": {
+          "type": "image",
+          "width": 10,
+          "height": 10,
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/McDonald%27s_SVG_logo.svg"
         },
         "encoding": {
           "longitude": {"field": "Longitude", "type": "quantitative"},
