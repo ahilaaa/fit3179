@@ -32,8 +32,8 @@
       {
         "mark": {
           "type": "geoshape",
-          "stroke": "#cbeef7",
-          "fill": "#bcdde6",
+          "stroke": "#b8dae3",
+          "fill": "#96e8ff",
           "strokeWidth": 0.5
         },
         "encoding": {
@@ -59,18 +59,17 @@
             "type": "quantitative",
             "scale": {
               "type": "threshold",
-              "domain": [0, 2000, 4000, 6000, 8000, 10000, 12000, 14000, 15000],
+              "domain": [2000, 4000, 6000, 8000, 10000, 12000, 14000, 15000],
               "range": [
-                "#ffcccc", 
-                "#fcbba1", 
-                "#fc9272", 
-                "#fb6a4a", 
-                "#ef3b2c", 
-                "#cb181d", 
-                "#a50f15", 
-                "#67000d", 
-                "#49000d",
-                "#330000"
+                "#ffebeb", 
+                "#ffc2c2", 
+                "#ff9999", 
+                "#ff7070", 
+                "#ff4d4d", 
+                "#e63946", 
+                "#c62828", 
+                "#8e1c1c",
+                "#5a0d0d"
               ]
             },
             "legend": {
@@ -83,18 +82,17 @@
             "type": "quantitative",
             "scale": {
               "type": "threshold",
-              "domain": [0, 2000, 4000, 6000, 8000, 10000, 12000, 14000, 15000],
+              "domain": [2000, 4000, 6000, 8000, 10000, 12000, 14000, 15000],
               "range": [
-                "#ffcccc", 
-                "#fcbba1", 
-                "#fc9272", 
-                "#fb6a4a", 
-                "#ef3b2c", 
-                "#cb181d", 
-                "#a50f15", 
-                "#67000d", 
-                "#49000d",
-                "#330000"
+                "#ffebeb", 
+                "#ffc2c2", 
+                "#ff9999", 
+                "#ff7070", 
+                "#ff4d4d", 
+                "#e63946", 
+                "#c62828", 
+                "#8e1c1c",
+                "#5a0d0d"
               ]
             }
           },
