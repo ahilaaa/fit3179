@@ -79,7 +79,7 @@ def keep_vic_results(filename):
     df = pd.read_csv(filename)
 
     # Victoria boundaries (approximate)
-    lat_min, lat_max = -39.2, -33.9  # Latitude range for Victoria
+    lat_min, lat_max = -39.2, -34  # Latitude range for Victoria
     lng_min, lng_max = 140.6, 150.3  # Longitude range for Victoria
 
     # Filter the dataframe to keep only entries within Victoria
@@ -88,20 +88,10 @@ def keep_vic_results(filename):
 
 
     # Save the filtered dataframe
-    vic_df.to_csv(filename)
+    vic_df.to_csv(filename, index=False)
 
 
 
-def remove_first_column(filename):
-
-    # Read the CSV file
-    df = pd.read_csv(filename)
-
-    # Drop the first column
-    df = df.iloc[:, 1:]
-
-    # Save the modified DataFrame to a new CSV file
-    df.to_csv(filename)
 
 
 
