@@ -4,6 +4,8 @@ from geopy.exc import GeocoderTimedOut, GeocoderUnavailable
 import ssl
 import certifi
 
+
+
 def initialize_geolocator():
     """
     Initialize the geolocator with SSL context using certifi for verification.
@@ -12,6 +14,8 @@ def initialize_geolocator():
     """
     ssl_context = ssl.create_default_context(cafile=certifi.where())
     return Nominatim(user_agent="geoapi", ssl_context=ssl_context)
+
+
 
 def get_suburb(latitude, longitude, geolocator):
     """
@@ -47,6 +51,32 @@ def process_file(input_file):
 
 
 
+
+def add_fast_food_count(income_data_path, fast_food_data_path, output_data_path,fast_food_name):
+    
+    # Load the data
+    fast_food_data = pd.read_csv(fast_food_data_path)
+
+    income_data = pd.read_csv(income_data_path)
+    
+    # Count the number of fast food locations per suburb
+    fast_food_counts = fast_food_data['Suburb'].value_counts().reset_index()
+    fast_food_counts.columns = ['suburb', f'{fast_food_name} Count']
+    
+    # Merge the counts with the income data on suburb names
+    income_data_with_fast_food = pd.merge(income_data, fast_food_counts, on='suburb', how='left')
+    
+    # Fill NaN values in the count column with 0 (for suburbs without any fast food locations)
+    income_data_with_fast_food[f'{fast_food_name} Count'] = income_data_with_fast_food[f'{fast_food_name} Count'].fillna(0).astype(int)
+    
+    income_data_with_fast_food.to_csv(output_data_path, index=False)
+    print(f"Updated income data saved to: {output_data_path}")
+
+
+'''
+add_fast_food_count('/Users/ahila/Desktop/fit3179/data/csv/Income VIC.csv', '/Users/ahila/Desktop/fit3179/data/csv/KFC Locations.csv', '/Users/ahila/Desktop/fit3179/data/csv/Income_VIC_FastFood.csv',"KFC")
+add_fast_food_count('/Users/ahila/Desktop/fit3179/data/csv/Income_VIC_FastFood.csv', "/Users/ahila/Desktop/fit3179/data/csv/McDonald's Locations.csv", '/Users/ahila/Desktop/fit3179/data/csv/Income_VIC_FastFood.csv', "McDonald's")
+add_fast_food_count('/Users/ahila/Desktop/fit3179/data/csv/Income_VIC_FastFood.csv', "/Users/ahila/Desktop/fit3179/data/csv/Hungry Jack's Locations.csv", '/Users/ahila/Desktop/fit3179/data/csv/Income_VIC_FastFood.csv', "Hungry Jack's")'''
 
 
 
