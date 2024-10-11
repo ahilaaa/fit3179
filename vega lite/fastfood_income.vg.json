@@ -1,12 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Fast Food Locations in Victoria",
   "width": "container",
   "height": 400,
-  "title": "Median Income and Fast Food Locations in Victoria",
   "params": [
     {
       "name": "zoomLevel",
-      "value": 15000,
+      "value": 20000,
       "bind": {
         "input": "range",
         "min": 4000,
@@ -28,11 +28,11 @@
     },
     {
       "name": "year",
-      "value": 2022,
+      "value": 2021,
       "bind": {
         "input": "range",
         "min": 2013,
-        "max": 2022,
+        "max": 2021,
         "step": 1,
         "name": "SELECT Year"
       }
@@ -105,11 +105,11 @@
           }
         },
         {
-          "calculate": "toNumber(replace(replace(datum['Median taxable income ' + (year-1) + '-' + ((year)%100)], ',', ''), '\"', ''))",
+          "calculate": "toNumber(replace(replace(datum['Median taxable income ' + (year) + '-' + ((year+1)%100)], ',', ''), '\"', ''))",
           "as": "median_income"
         },
         {
-          "calculate": "toNumber(replace(replace(datum['Individuals ' + (year-1) + '-' + ((year)%100)], ',', ''), '\"', ''))",
+          "calculate": "toNumber(replace(replace(datum['Individuals ' + (year) + '-' + ((year+1)%100)], ',', ''), '\"', ''))",
           "as": "individuals_count"
         }
       ],
@@ -149,7 +149,7 @@
         "color": "#ff0000",
         "stroke":"black",
         "strokeWidth": {"expr": "zoomLevel / 70000"},
-        "opacity" : 0.7,
+        "opacity" : 0.8,
         "size": {"expr": "zoomLevel / 600"}
       },
       "encoding": {
@@ -173,7 +173,7 @@
         "color": "#ff7700",
         "stroke":"black",
         "strokeWidth": {"expr": "zoomLevel / 70000"},
-        "opacity" : 0.7,
+        "opacity" : 0.8,
         "size": {"expr": "zoomLevel / 600"}
       },
       "encoding": {
@@ -197,7 +197,7 @@
         "color": "#ffd000",
         "stroke":"black",
         "strokeWidth": {"expr": "zoomLevel / 70000"},
-        "opacity" : 0.7,
+        "opacity" : 0.8,
         "size": {"expr": "zoomLevel / 600"}
       },
       "encoding": {

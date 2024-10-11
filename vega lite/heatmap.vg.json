@@ -1,0 +1,84 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Median Income vs Fast Food Location Density",
+  "width": "container",
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/Council%20Income%20FastFood.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "calculate": "datum[fast_food_selection]",
+      "as": "Selected Fast Food Count"
+    }
+  ],
+  "params": [
+    {
+      "name": "fast_food_selection",
+      "value": "Total Fast Food Count",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Total Fast Food Count",
+          "McDonald's Count",
+          "Hungry Jack's Count",
+          "KFC Count"
+        ],
+        "labels": [
+          "All",
+          "McDonald's",
+          "Hungry Jack's",
+          "KFC"
+        ],
+        "name": "Select Fast Food Type: "
+      }
+    }
+  ],
+  "mark": "rect",
+  "encoding": {
+    "x": {
+      "bin": true,
+      "field": "Median taxable income 2021-22",
+      "type": "quantitative",
+      "axis": {"title": "Median Income (2021-22)"}
+    },
+    "y": {
+      "bin": true,
+      "field": "Selected Fast Food Count",
+      "type": "quantitative",
+      "axis": {"title": "Total Fast Food Locations"}
+    },
+    "color": {
+      "field": "Selected Fast Food Count",
+      "type": "quantitative",
+      "aggregate": "max",
+      "scale": {"scheme": "orangered"},
+      "legend": {"title": "No. Locations"}
+    },
+    "tooltip": [
+      {
+        "field": "Selected Fast Food Count",
+        "type": "quantitative",
+        "title": "No. Fast Food Locations"
+      },
+      {
+        "field": "council",
+        "type": "nominal",
+        "title": "Council"
+      },
+      {
+        "field": "Median taxable income 2021-22",
+        "type": "quantitative",
+        "title": "Median Income"
+      }
+    ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {"grid": false}
+  }
+}
+
+
+

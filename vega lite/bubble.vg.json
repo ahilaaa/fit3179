@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Median Income, Fast Food Location Density and Population in Victoria",
     "width": "container",
     "height": 300,
-    "title": "Population, Median Income, and Fast Food Location Density in Victoria",
     "data": {
       "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/Council%20Income%20FastFood.csv",
       "format": {"type": "csv"}
@@ -29,7 +29,7 @@
             "McDonald's",
             "Hungry Jack's",
             "KFC",
-            "All Combined"
+            "All"
           ],
           "name": "Select Fast Food: "
         }
@@ -41,7 +41,7 @@
       "stroke": "black",
       "strokeWidth": 1,
       "color": {
-    "expr": "selectionVar === 'McDonald\\'s Count' ? '#ffd000' : selectionVar === 'Hungry Jack\\'s Count' ? '#ff7700' : selectionVar === 'KFC Count' ? '#ff0000' : '#ff00f2'"
+    "expr": "selectionVar === 'McDonald\\'s Count' ? '#ffd000' : selectionVar === 'Hungry Jack\\'s Count' ? '#ff7700' : selectionVar === 'KFC Count' ? '#ff0000' : '#c17af0'"
   }
     },
     "encoding": {

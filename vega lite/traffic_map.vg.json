@@ -99,7 +99,7 @@
           "tooltip": [
             {"field": "properties.HMGNS_LNK_DESC", "type": "nominal", "title": "Road"},
             {"field": "properties.LGA_SHORT_NM", "type": "nominal", "title": "Council"},
-            {"field": "properties.ALLVEHS_AADT", "type": "quantitative", "title": "Annual Average Daily Traffic"}
+            {"field": "properties.ALLVEHS_AADT", "type": "quantitative", "title": "Average Daily Traffic"}
           ]
         }
       }
