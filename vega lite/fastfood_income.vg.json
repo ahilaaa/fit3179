@@ -20,7 +20,7 @@
       "value": 0,
       "bind": {
         "input": "range",
-        "min": 0,
+        "min": 20000,
         "max": 80000,
         "step": 1000,
         "name": "SELECT Minimum Median Income"
