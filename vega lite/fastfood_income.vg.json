@@ -28,7 +28,7 @@
     },
     {
       "name": "year",
-      "value": 2021,
+      "value": 2022,
       "bind": {
         "input": "range",
         "min": 2013,
@@ -104,11 +104,11 @@
           }
         },
         {
-          "calculate": "toNumber(replace(replace(datum['Median taxable income ' + (year) + '-' + ((year+1)%100)], ',', ''), '\"', ''))",
+          "calculate": "toNumber(replace(replace(datum['Median taxable income ' + (year-1) + '-' + ((year)%100)], ',', ''), '\"', ''))",
           "as": "median_income"
         },
         {
-          "calculate": "toNumber(replace(replace(datum['Individuals ' + (year) + '-' + ((year+1)%100)], ',', ''), '\"', ''))",
+          "calculate": "toNumber(replace(replace(datum['Individuals ' + (year-1) + '-' + ((year)%100)], ',', ''), '\"', ''))",
           "as": "individuals_count"
         }
       ],
