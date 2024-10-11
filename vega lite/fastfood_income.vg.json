@@ -9,7 +9,7 @@
       "value": 15000,
       "bind": {
         "input": "range",
-        "min": 4500,
+        "min": 4000,
         "max": 100000,
         "step": 100,
         "name": "SELECT Zoom"
@@ -55,8 +55,8 @@
   "projection": {
     "type": "mercator",
     "scale": {"expr": "zoomLevel"},
-    "center": [144.9631, -37.8136],
-    "translate": [320, 300]
+    "center": [144.9631, -37.9],
+    "translate": [315, 300]
   },
   "layer": [
     {
