@@ -2,39 +2,114 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": "container",
     "height": 300,
-    "title": "Fast Food Density by Council vs Median Income",
+    "title": "Population, Median Income, and Fast Food Location Density in Victoria",
     "data": {
       "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/Council%20Income%20FastFood.csv",
       "format": {"type": "csv"}
     },
     "transform": [
       {
-        "calculate": "datum['McDonald\\'s Count']",
-        "as": "Total McDonalds Locations"
+        "calculate": "selectionVar === 'Total Fast Food Locations' ? datum['Total Fast Food Locations'] : datum[selectionVar]",
+        "as": "Selected Fast Food Count"
       }
     ],
-    "mark": "circle",
+    "params": [
+      {
+        "name": "selectionVar",
+        "value": "McDonald's Count",
+        "bind": {
+          "input": "select",
+          "options": [
+            "McDonald's Count",
+            "Hungry Jack's Count",
+            "KFC Count",
+            "Total Fast Food Locations"
+          ],
+          "labels": [
+            "McDonald's",
+            "Hungry Jack's",
+            "KFC",
+            "All Combined"
+          ],
+          "name": "Select Fast Food Type: "
+        }
+      }
+    ],
+    "mark": {
+      "type": "circle",
+      "opacity": 0.5,
+      "stroke": "black",
+      "strokeWidth": 1
+    },
     "encoding": {
       "x": {
-        "field": "Total McDonalds Locations",
+        "field": "Selected Fast Food Count",
         "type": "quantitative",
-        "title": "Total McDonald's Locations"
+        "title": "Total Fast Food Locations",
+        "axis": {
+          "grid": false,
+          "format": "d",
+          "tickMinStep": 1
+        },
+        "scale": {
+          "padding": 20,
+          "domain": [0, 12]
+        }
       },
       "y": {
-        "field": "Median taxable income 2021-22",
-        "type": "quantitative",
-        "title": "Median Income 2022"
-      },
-      "size": {
         "field": "Individuals 2021-22",
         "type": "quantitative",
         "title": "Population",
-        "scale": {"range": [10, 1000]}
+        "axis": {"grid": false},
+        "scale": {
+          "domain": [0, 47000]
+        }
+      },
+      "size": {
+        "field": "Median taxable income 2021-22",
+        "type": "quantitative",
+        "title": "Median Income",
+        "scale": {
+          "type": "pow",
+          "exponent": 3,
+          "domain": [30000, 80000],
+          "range": [10, 2000]
+        },
+        "legend": {
+          "title": "Median Income"
+        }
+      },
+      "color": {
+        "condition": [
+          {
+            "test": "selectionVar === 'McDonald\\'s Count'",
+            "value": "yellow"
+          },
+          {
+            "test": "selectionVar === 'Hungry Jack\\'s Count'",
+            "value": "orange"
+          },
+          {
+            "test": "selectionVar === 'KFC Count'",
+            "value": "red"
+          },
+          {
+            "test": "selectionVar === 'Total Fast Food Location'",
+            "value": "pink"
+          }
+        ],
+
+        "legend": {
+          "title": "Median Income",
+          "symbolFillColor": {
+            "expr": "selectionVar === 'McDonald\\'s Count' ? 'yellow' : selectionVar === 'Hungry Jack\\'s Count' ? 'orange' : selectionVar === 'KFC Count' ? 'red' : 'pink'"
+          }
+        }
       },
       "tooltip": [
         {"field": "council", "type": "nominal", "title": "Council"},
         {"field": "Median taxable income 2021-22", "type": "quantitative", "title": "Median Income"},
-        {"field": "Total McDonalds Locations", "type": "quantitative", "title": "Total McDonald's Locations"},
+        {"field": "Selected Fast Food Count", "type": "quantitative", "title": "Fast Food Locations"},
         {"field": "Individuals 2021-22", "type": "quantitative", "title": "Population"}
       ]
     }
