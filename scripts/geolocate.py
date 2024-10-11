@@ -73,67 +73,9 @@ def add_fast_food_count(income_data_path, fast_food_data_path, output_data_path,
     print(f"Updated income data saved to: {output_data_path}")
 
 
-'''
-add_fast_food_count('/Users/ahila/Desktop/fit3179/data/csv/Income VIC.csv', '/Users/ahila/Desktop/fit3179/data/csv/KFC Locations.csv', '/Users/ahila/Desktop/fit3179/data/csv/Income_VIC_FastFood.csv',"KFC")
-add_fast_food_count('/Users/ahila/Desktop/fit3179/data/csv/Income_VIC_FastFood.csv', "/Users/ahila/Desktop/fit3179/data/csv/McDonald's Locations.csv", '/Users/ahila/Desktop/fit3179/data/csv/Income_VIC_FastFood.csv', "McDonald's")
-add_fast_food_count('/Users/ahila/Desktop/fit3179/data/csv/Income_VIC_FastFood.csv', "/Users/ahila/Desktop/fit3179/data/csv/Hungry Jack's Locations.csv", '/Users/ahila/Desktop/fit3179/data/csv/Income_VIC_FastFood.csv', "Hungry Jack's")'''
-
-
-
-
-'''process_file("/Users/ahila/Desktop/fit3179/data/csv/McDonald's Locations.csv")
-process_file("/Users/ahila/Desktop/fit3179/data/csv/Hungry Jack's Locations.csv")
-process_file("/Users/ahila/Desktop/fit3179/data/csv/KFC Locations.csv")'''
 
 
 
 
 
 
-
-
-
-
-
-# DO NOT COUNT TWICE FOR REPEATED SUBURBS IN SUBURBS VIC FULL
-
-
-# merging datasets
-
-# Load the data from the provided CSV file
-file_path = "/Users/ahila/Desktop/fit3179/data/csv/Merged Income FastFood.csv"
-
-df = pd.read_csv(file_path)
-data_unique_suburbs = df.drop_duplicates(subset=['suburb'])
-
-# Save the cleaned data back to a new CSV file
-
-data_unique_suburbs.to_csv(file_path, index=False)
-
-
-# Remove commas from the 'Median taxable income 2021-22' and 'Individuals 2021-22' columns and convert to numeric
-df['Median taxable income 2021-22'] = df['Median taxable income 2021-22'].str.replace(',', '')
-df['Median taxable income 2021-22'] = pd.to_numeric(df['Median taxable income 2021-22'], errors='coerce')
-
-df['Individuals 2021-22'] = df['Individuals 2021-22'].str.replace(',', '')
-df['Individuals 2021-22'] = pd.to_numeric(df['Individuals 2021-22'], errors='coerce')
-
-# Group by the 'council' column
-# Sum the counts for each council
-# Calculate the average of 'Median taxable income 2021-22' and 'Individuals 2021-22'
-summed_data = df.groupby('council').agg({
-    'KFC Count': 'sum',
-    "McDonald's Count": 'sum',
-    "Hungry Jack's Count": 'sum',
-    'Median taxable income 2021-22': 'mean',
-    'Individuals 2021-22': 'mean'
-}).reset_index()
-
-# Round the 'Median taxable income 2021-22' and 'Individuals 2021-22' to 0 decimal places
-summed_data['Median taxable income 2021-22'] = summed_data['Median taxable income 2021-22'].round(0).astype(int)
-summed_data['Individuals 2021-22'] = summed_data['Individuals 2021-22'].round(0).astype(int)
-
-# Save the result to a new CSV file
-summed_data.to_csv("/Users/ahila/Desktop/fit3179/data/csv/Council Income FastFood.csv", index=False)
-
-print("Summed counts and average values have been calculated and saved to 'Council Income FastFood.csv'.")

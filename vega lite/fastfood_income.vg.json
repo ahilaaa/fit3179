@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Fast Food Locations in Victoria",
-  "width": 500,
-  "height": 500,
+  "width": "container",
+  "height": 550,
   "params": [
     {
       "name": "zoomLevel",
