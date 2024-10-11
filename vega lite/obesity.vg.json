@@ -1,29 +1,20 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 800,
-  "height": 800,
-  "title": "Adults Obesity ASR in Victoria",
-  "data": {
-    "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/topojson/victoria.json",
-    "format": {
-      "type": "topojson",
-      "feature": "suburb-2-vic"
-    }
-  },
-  "transform": [
-    {
-      "lookup": "properties.vic_loca_2",
-      "from": {
-        "data": {
-          "url": "path/to/Obesity Council.csv",
-          "format": {"type": "csv"}
-        },
-        "key": "suburb",
-        "fields": ["Adults - Obesity - ASR"]
-      }
-    }
-  ],
+  "width": 1000,
+  "height": 500,
+  "title": "Obesity Rates by Council: Victoria",
   "params": [
+    {
+      "name": "obesity_range",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "name": "SELECT Minimum Obesity Rate"
+      }
+    },
     {
       "name": "zoomLevel",
       "value": 5000,
@@ -32,7 +23,7 @@
         "min": 5000,
         "max": 100000,
         "step": 100,
-        "name": "zoom"
+        "name": "SELECT Zoom"
       }
     }
   ],
@@ -41,25 +32,58 @@
     "scale": {"expr": "zoomLevel"},
     "center": [144.9631, -37.8136]
   },
-  "mark": {
-    "type": "geoshape",
-    "stroke": null
-  },
-  "encoding": {
-    "color": {
-      "condition": {
-        "test": "datum['Adults - Obesity - ASR'] == null",
-        "value": "lightgrey"
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/topojson/victoria.json",
+        "format": {"type": "topojson", "feature": "suburb-2-vic"}
       },
-      "field": "Adults - Obesity - ASR",
-      "type": "quantitative",
-      "scale": {"scheme": "reds"},
-      "legend": {"title": "Obesity ASR"}
+      "mark": {"type": "geoshape", "stroke": "slategray", "fill": "lightgray", "strokeWidth": 0.3},
+      "encoding": {
+        "tooltip": [
+          {"field": "properties.vic_loca_2", "type": "nominal", "title": "Suburb"}
+        ]
+      }
     },
-    "tooltip": [
-      {"field": "properties.vic_loca_2", "type": "nominal", "title": "Suburb"},
-      {"field": "Adults - Obesity - ASR", "type": "quantitative", "title": "Obesity ASR"}
-    ]
-  }
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/topojson/victoria.json",
+        "format": {"type": "topojson", "feature": "suburb-2-vic"}
+      },
+      "transform": [
+        {
+          "lookup": "properties.vic_loca_2",
+          "from": {
+            "data": {"url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/Obesity/Merged/Obesity%20Council.csv"},
+            "key": "suburb",
+            "fields": ["Adults - Obesity - ASR"]
+          }
+        },
+        {
+          "calculate": "toNumber(replace(replace(datum['Adults - Obesity - ASR'], ',', ''), '\"', ''))",
+          "as": "obesity_asr"
+        }
+      ],
+      "mark": {"type": "geoshape", "stroke": "#5c7eab", "strokeWidth": 0.3},
+      "encoding": {
+        "color": {
+          "condition": {
+            "test": "datum.obesity_asr >= obesity_range",
+            "field": "obesity_asr",
+            "type": "quantitative",
+            "scale": {
+              "domain": [0, 10, 20, 30, 40, 50],
+              "range": ["#f7fbff", "#deebf7", "#c6dbef", "#9ecae1", "#6baed6", "#08519c"]
+            }
+          },
+          "value": "lightgray"
+        },
+        "tooltip": [
+          {"field": "properties.vic_loca_2", "type": "nominal", "title": "Suburb"},
+          {"field": "obesity_asr", "type": "quantitative", "title": "Obesity Rate"}
+        ]
+      }
+    }
+  ]
 }
 
