@@ -2,22 +2,11 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 1000,
   "height": 500,
-  "title": "Adults Obesity Rate in Victoria",
+  "title": "Obesity Rates by Council: Victoria",
   "params": [
     {
-      "name": "obesity_rate_range",
-      "value": 0,
-      "bind": {
-        "input": "range",
-        "min": 0,
-        "max": 50,
-        "step": 1,
-        "name": "SELECT Minimum Obesity Rate"
-      }
-    },
-    {
       "name": "zoomLevel",
-      "value": 5000,
+      "value": 15000,
       "bind": {
         "input": "range",
         "min": 5000,
@@ -38,7 +27,7 @@
         "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/topojson/victoria.json",
         "format": {"type": "topojson", "feature": "suburb-2-vic"}
       },
-      "mark": {"type": "geoshape", "stroke": "slategray", "fill": "lightgray", "strokeWidth": 0.3},
+      "mark": {"type": "geoshape", "fill": "lightgray", "strokeWidth": 0.3},
       "encoding": {
         "tooltip": [
           {"field": "properties.vic_loca_2", "type": "nominal", "title": "Suburb"}
@@ -67,16 +56,15 @@
       "mark": {"type": "geoshape", "stroke": "#5c7eab", "strokeWidth": 0.3},
       "encoding": {
         "color": {
-          "condition": {
-            "test": "datum.obesity_rate >= obesity_rate_range",
-            "field": "obesity_rate",
-            "type": "quantitative",
-            "scale": {
-              "domain": [0, 10, 20, 30, 40, 50],
-              "range": ["#ffe6f2", "#ffb3d9", "#ff80bf", "#ff4da6", "#ff1a8c", "#b3005e"]
-            }
+          "field": "obesity_rate",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 10, 20, 30, 40],
+            "range": ["#feebe2", "#fbb4b9", "#f768a1", "#c51b8a", "#4f0a4a"]
           },
-          "value": "lightgray"
+          "legend": {
+            "title": "Obesity Rate (%)"
+          }
         },
         "tooltip": [
           {"field": "properties.vic_loca_2", "type": "nominal", "title": "Suburb"},
@@ -86,4 +74,3 @@
     }
   ]
 }
-
