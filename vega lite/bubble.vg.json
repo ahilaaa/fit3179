@@ -9,7 +9,7 @@
     },
     "transform": [
       {
-        "calculate": "selectionVar === 'Total Fast Food Locations' ? datum['Total Fast Food Locations'] : datum[selectionVar]",
+        "calculate": "datum[selectionVar]",
         "as": "Selected Fast Food Count"
       }
     ],
@@ -23,7 +23,7 @@
             "McDonald's Count",
             "Hungry Jack's Count",
             "KFC Count",
-            "Total Fast Food Locations"
+            "Total Fast Food Count"
           ],
           "labels": [
             "McDonald's",
@@ -31,7 +31,7 @@
             "KFC",
             "All Combined"
           ],
-          "name": "Select Fast Food Type: "
+          "name": "Select Fast Food: "
         }
       }
     ],
@@ -39,7 +39,10 @@
       "type": "circle",
       "opacity": 0.5,
       "stroke": "black",
-      "strokeWidth": 1
+      "strokeWidth": 1,
+      "color": {
+    "expr": "selectionVar === 'McDonald\\'s Count' ? '#ffd000' : selectionVar === 'Hungry Jack\\'s Count' ? '#ff7700' : selectionVar === 'KFC Count' ? '#ff0000' : '#ff00f2'"
+  }
     },
     "encoding": {
       "x": {
@@ -52,8 +55,10 @@
           "tickMinStep": 1
         },
         "scale": {
-          "padding": 20,
-          "domain": [0, 12]
+            "domain": {
+            "expr": "selectionVar === 'McDonald\\'s Count' ? [0, 12] : selectionVar === 'Hungry Jack\\'s Count' ? [0, 8] : selectionVar === 'KFC Count' ? [0, 15] : [0, 35]"},
+            "padding": 20,
+            "nice": false
         }
       },
       "y": {
@@ -77,33 +82,6 @@
         },
         "legend": {
           "title": "Median Income"
-        }
-      },
-      "color": {
-        "condition": [
-          {
-            "test": "selectionVar === 'McDonald\\'s Count'",
-            "value": "yellow"
-          },
-          {
-            "test": "selectionVar === 'Hungry Jack\\'s Count'",
-            "value": "orange"
-          },
-          {
-            "test": "selectionVar === 'KFC Count'",
-            "value": "red"
-          },
-          {
-            "test": "selectionVar === 'Total Fast Food Location'",
-            "value": "pink"
-          }
-        ],
-
-        "legend": {
-          "title": "Median Income",
-          "symbolFillColor": {
-            "expr": "selectionVar === 'McDonald\\'s Count' ? 'yellow' : selectionVar === 'Hungry Jack\\'s Count' ? 'orange' : selectionVar === 'KFC Count' ? 'red' : 'pink'"
-          }
         }
       },
       "tooltip": [

@@ -16,3 +16,10 @@ press RAW on data source, copy link up top into vega editor
 
 
 https://upload.wikimedia.org/wikipedia/commons/3/36/McDonald%27s_Golden_Arches.svg - mcdonalds bare icon
+
+
+'McDonald\\'s Count' ? '#ffd000' 
+'Hungry Jack\\'s Count' ? '#ff7700'
+'KFC Count' ? '#ff0000' 
+
+ALL '#ff00f2'"
