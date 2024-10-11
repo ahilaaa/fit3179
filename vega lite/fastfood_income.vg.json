@@ -80,7 +80,7 @@
         {
           "lookup": "properties.vic_loca_2",
           "from": {
-            "data": {"url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/Income%20VIC.csv"},
+            "data": {"url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/Income/Income%20VIC.csv"},
             "key": "suburb",
             "fields": [
               "Median taxable income 2013-14",
