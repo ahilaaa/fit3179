@@ -90,13 +90,26 @@
               "Median taxable income 2018-19",
               "Median taxable income 2019-20",
               "Median taxable income 2020-21",
-              "Median taxable income 2021-22"
+              "Median taxable income 2021-22",
+              "Individuals 2013-14",
+              "Individuals 2014-15",
+              "Individuals 2015-16",
+              "Individuals 2016-17",
+              "Individuals 2017-18",
+              "Individuals 2018-19",
+              "Individuals 2019-20",
+              "Individuals 2020-21",
+              "Individuals 2021-22"
             ]
           }
         },
         {
           "calculate": "toNumber(replace(replace(datum['Median taxable income ' + (year) + '-' + ((year+1)%100)], ',', ''), '\"', ''))",
           "as": "median_income"
+        },
+        {
+          "calculate": "toNumber(replace(replace(datum['Individuals ' + (year) + '-' + ((year+1)%100)], ',', ''), '\"', ''))",
+          "as": "individuals_count"
         }
       ],
       "mark": {"type": "geoshape", "stroke": "#7b919c", "strokeWidth": 0.3},
@@ -115,7 +128,8 @@
         },
         "tooltip": [
           {"field": "properties.vic_loca_2", "type": "nominal", "title": "Suburb"},
-          {"field": "median_income", "type": "quantitative", "title": "Median Income"}
+          {"field": "median_income", "type": "quantitative", "title": "Median Income"},
+          { "field": "individuals_count", "type": "quantitative", "title": "Population"}
         ]
       }
     },
