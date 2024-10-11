@@ -78,4 +78,31 @@ def add_fast_food_count(income_data_path, fast_food_data_path, output_data_path,
 
 
 
+# merging for obestiy rates by council
+
+'''
+
+# Load the two CSV files
+vic_table_df = pd.read_csv('/Users/ahila/Desktop/fit3179/data/csv/Obesity/Vic-Table 1.csv')
+suburbs_vic_full_df = pd.read_csv('data/csv/Suburbs/Suburbs VIC Full.csv')
+
+# Normalize 'LGA' and 'lgaregion' values for consistency
+vic_table_df['LGA'] = vic_table_df['LGA'].str.strip().str.lower()
+suburbs_vic_full_df['lgaregion'] = suburbs_vic_full_df['lgaregion'].str.strip().str.lower()
+
+# Perform the merge using the normalized 'LGA' and 'lgaregion' columns
+merged_df = suburbs_vic_full_df.merge(vic_table_df, left_on='lgaregion', right_on='LGA', how='left')
+
+# Convert the 'suburb' column to uppercase
+merged_df['suburb'] = merged_df['suburb'].str.upper()
+
+# Capitalize the first letter of every word in 'lgaregion'
+merged_df['lgaregion'] = merged_df['lgaregion'].str.title()
+
+# Select the desired columns, including 'LGA', 'suburb', and 'Adults - Obesity - ASR'
+result_columns = ['lgaregion', 'suburb', 'Adults - Obesity - ASR']
+result_df = merged_df[result_columns]
+
+# Save the result to a new CSV file
+result_df.to_csv('/Users/ahila/Desktop/fit3179/data/csv/Obesity/Merged/Obesity Council.csv', index=False)'''
 

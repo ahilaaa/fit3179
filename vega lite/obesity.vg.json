@@ -2,10 +2,10 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 1000,
   "height": 500,
-  "title": "Obesity Rates by Council: Victoria",
+  "title": "Adults Obesity Rate in Victoria",
   "params": [
     {
-      "name": "obesity_range",
+      "name": "obesity_rate_range",
       "value": 0,
       "bind": {
         "input": "range",
@@ -56,31 +56,31 @@
           "from": {
             "data": {"url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/Obesity/Merged/Obesity%20Council.csv"},
             "key": "suburb",
-            "fields": ["Adults - Obesity - ASR"]
+            "fields": ["Adults - Obesity Rate"]
           }
         },
         {
-          "calculate": "toNumber(replace(replace(datum['Adults - Obesity - ASR'], ',', ''), '\"', ''))",
-          "as": "obesity_asr"
+          "calculate": "toNumber(replace(replace(datum['Adults - Obesity Rate'], ',', ''), '\"', ''))",
+          "as": "obesity_rate"
         }
       ],
       "mark": {"type": "geoshape", "stroke": "#5c7eab", "strokeWidth": 0.3},
       "encoding": {
         "color": {
           "condition": {
-            "test": "datum.obesity_asr >= obesity_range",
-            "field": "obesity_asr",
+            "test": "datum.obesity_rate >= obesity_rate_range",
+            "field": "obesity_rate",
             "type": "quantitative",
             "scale": {
               "domain": [0, 10, 20, 30, 40, 50],
-              "range": ["#f7fbff", "#deebf7", "#c6dbef", "#9ecae1", "#6baed6", "#08519c"]
+              "range": ["#ffe6f2", "#ffb3d9", "#ff80bf", "#ff4da6", "#ff1a8c", "#b3005e"]
             }
           },
           "value": "lightgray"
         },
         "tooltip": [
           {"field": "properties.vic_loca_2", "type": "nominal", "title": "Suburb"},
-          {"field": "obesity_asr", "type": "quantitative", "title": "Obesity Rate"}
+          {"field": "obesity_rate", "type": "quantitative", "title": "Adults Obesity Rate"}
         ]
       }
     }
