@@ -1,5 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "height": 300,
+    "title": "Fast Food Density by Council vs Median Income",
     "data": {
       "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/Council%20Income%20FastFood.csv",
       "format": {"type": "csv"}
@@ -13,26 +16,26 @@
     "mark": "circle",
     "encoding": {
       "x": {
-        "field": "Median taxable income 2021-22",
-        "type": "quantitative",
-        "title": "Median Income (2021-22)"
-      },
-      "y": {
         "field": "Total McDonalds Locations",
         "type": "quantitative",
         "title": "Total McDonald's Locations"
       },
+      "y": {
+        "field": "Median taxable income 2021-22",
+        "type": "quantitative",
+        "title": "Median Income 2022"
+      },
       "size": {
         "field": "Individuals 2021-22",
         "type": "quantitative",
-        "title": "Number of Individuals",
+        "title": "Population",
         "scale": {"range": [10, 1000]}
       },
       "tooltip": [
         {"field": "council", "type": "nominal", "title": "Council"},
         {"field": "Median taxable income 2021-22", "type": "quantitative", "title": "Median Income"},
         {"field": "Total McDonalds Locations", "type": "quantitative", "title": "Total McDonald's Locations"},
-        {"field": "Individuals 2021-22", "type": "quantitative", "title": "Individuals"}
+        {"field": "Individuals 2021-22", "type": "quantitative", "title": "Population"}
       ]
     }
   }
