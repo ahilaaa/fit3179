@@ -4,7 +4,7 @@
     "width": "container",
     "height": 300,
     "data": {
-      "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/Council%20Income%20FastFood.csv",
+      "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/FastFood/Council%20Income%20FastFood.csv",
       "format": {"type": "csv"}
     },
     "transform": [
@@ -31,7 +31,7 @@
             "KFC",
             "All"
           ],
-          "name": "Select Fast Food: "
+          "name": "Select Fast Food Chain: "
         }
       }
     ],
@@ -41,7 +41,7 @@
       "stroke": "black",
       "strokeWidth": 1,
       "color": {
-    "expr": "selectionVar === 'McDonald\\'s Count' ? '#ffd000' : selectionVar === 'Hungry Jack\\'s Count' ? '#ff7700' : selectionVar === 'KFC Count' ? '#ff0000' : '#c17af0'"
+    "expr": "selectionVar === 'McDonald\\'s Count' ? '#ffdd00' : selectionVar === 'Hungry Jack\\'s Count' ? '#ff6600' : selectionVar === 'KFC Count' ? '#ff0000' : '#9757e6'"
   }
     },
     "encoding": {

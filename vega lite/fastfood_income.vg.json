@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Fast Food Locations in Victoria",
-  "width": "container",
-  "height": 400,
+  "width": 500,
+  "height": 500,
   "params": [
     {
       "name": "zoomLevel",
@@ -48,7 +48,7 @@
           "Hungry Jack's",
           "All"
         ],
-        "name": "SELECT Fast Food Chains"
+        "name": "SELECT Fast Food Chain "
       }
     }
   ],
@@ -123,20 +123,52 @@
             "scale": {
               "domain": [0, 20000, 25000, 30000, 40000, 50000, 60000, 70000, 80000],
               "range": ["#f7fbff", "#deebf7", "#c6dbef", "#9ecae1", "#6baed6", "#3182bd", "#08519c", "#08306b", "#081d58"]
-            }
+            },
+            "legend": {"title": "Median Income"}
           },
           "value": "lightgray"
         },
         "tooltip": [
           {"field": "properties.vic_loca_2", "type": "nominal", "title": "Suburb"},
           {"field": "median_income", "type": "quantitative", "title": "Median Income"},
-          { "field": "individuals_count", "type": "quantitative", "title": "Population"}
+          {"field": "individuals_count", "type": "quantitative", "title": "Population"}
         ]
       }
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/KFC%20Locations.csv",
+        "values": [
+          {"Chain": "McDonald's"},
+          {"Chain": "KFC"},
+          {"Chain": "Hungry Jack's"}
+        ]
+      },
+      "mark": {
+          "type": "point",
+          "filled": true
+        },
+      "encoding": {
+        "color": {
+          "field": "Chain",
+          "type": "nominal",
+          "scale": {
+            "domain": ["McDonald's", "KFC", "Hungry Jack's"],
+            "range": ["#ffdd00", "#ff0000", "#ff6600"]
+          },
+          "legend": {
+            "title": "Fast Food Chain",
+            "orient": "right"
+          }
+        },
+        "shape": {"value": "circle"},
+        "size": {"value": 100},
+        "opacity": {"value": 0}
+      }
+    },
+
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/FastFood/KFC%20Locations.csv",
         "format": {"type": "csv"}
       },
       "transform": [
@@ -147,20 +179,23 @@
       "mark": {
         "type": "circle",
         "color": "#ff0000",
-        "stroke":"black",
-        "strokeWidth": {"expr": "zoomLevel / 70000"},
-        "opacity" : 0.8,
-        "size": {"expr": "zoomLevel / 600"}
+        "stroke": "black",
+        "strokeWidth": {"expr": "zoomLevel / 200000"},
+        "opacity": 0.95,
+        "size": {"expr": "zoomLevel / 500"}
       },
       "encoding": {
         "longitude": {"field": "Longitude", "type": "quantitative"},
         "latitude": {"field": "Latitude", "type": "quantitative"},
-        "tooltip": [{"field": "Name", "type": "nominal"}]
+        "tooltip": [
+          {"field": "Name", "type": "nominal"},
+          {"field": "Suburb", "type": "nominal"}
+        ]
       }
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/Hungry%20Jack's%20Locations.csv",
+        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/FastFood/Hungry%20Jack's%20Locations.csv",
         "format": {"type": "csv"}
       },
       "transform": [
@@ -170,21 +205,24 @@
       ],
       "mark": {
         "type": "circle",
-        "color": "#ff7700",
-        "stroke":"black",
-        "strokeWidth": {"expr": "zoomLevel / 70000"},
-        "opacity" : 0.8,
-        "size": {"expr": "zoomLevel / 600"}
+        "color": "#ff6600",
+        "stroke": "black",
+        "strokeWidth": {"expr": "zoomLevel / 200000"},
+        "opacity": 0.95,
+        "size": {"expr": "zoomLevel / 500"}
       },
       "encoding": {
         "longitude": {"field": "Longitude", "type": "quantitative"},
         "latitude": {"field": "Latitude", "type": "quantitative"},
-        "tooltip": [{"field": "Name", "type": "nominal"}]
+        "tooltip": [
+          {"field": "Name", "type": "nominal"},
+          {"field": "Suburb", "type": "nominal"}
+        ]
       }
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/McDonald's%20Locations.csv",
+        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/FastFood/McDonald's%20Locations.csv",
         "format": {"type": "csv"}
       },
       "transform": [
@@ -194,17 +232,21 @@
       ],
       "mark": {
         "type": "circle",
-        "color": "#ffd000",
-        "stroke":"black",
-        "strokeWidth": {"expr": "zoomLevel / 70000"},
-        "opacity" : 0.8,
-        "size": {"expr": "zoomLevel / 600"}
+        "color": "#ffdd00",
+        "stroke": "black",
+        "strokeWidth": {"expr": "zoomLevel / 200000"},
+        "opacity": 0.95,
+        "size": {"expr": "zoomLevel / 500"}
       },
       "encoding": {
         "longitude": {"field": "Longitude", "type": "quantitative"},
         "latitude": {"field": "Latitude", "type": "quantitative"},
-        "tooltip": [{"field": "Name", "type": "nominal"}]
+        "tooltip": [
+          {"field": "Name", "type": "nominal"},
+          {"field": "Suburb", "type": "nominal"}
+        ]
       }
     }
   ]
 }
+

@@ -1,12 +1,12 @@
 # fit3179
 
-useful links
+data sources
 
 https://discover.data.vic.gov.au/dataset/water-supply-daily-rainfall-at-the-4-major-harvesting-storage-dams
 https://discover.data.vic.gov.au/dataset/water-supply-daily-volume-drawn-from-storage-dams-operated-by-melbourne-water
 
 
-https://data.gov.au/data/dataset/taxation-statistics-2021-22/resource/9bd9d5af-2c09-405f-b484-69c862f4dc2e - tax information
+https://data.gov.au/data/dataset/taxation-statistics-2021-22/resource/9bd9d5af-2c09-405f-b484-69c862f4dc2e - income information
 
 https://www.matthewproctor.com/ - geo information for all suburbs
 
@@ -18,8 +18,5 @@ press RAW on data source, copy link up top into vega editor
 https://upload.wikimedia.org/wikipedia/commons/3/36/McDonald%27s_Golden_Arches.svg - mcdonalds bare icon
 
 
-'McDonald\\'s Count' ? '#ffd000' 
-'Hungry Jack\\'s Count' ? '#ff7700'
-'KFC Count' ? '#ff0000' 
+https://www.vu.edu.au/mitchell-institute/australian-health-tracker-series/obesity-rate-depends-on-where-you-live - detailed obesity rates 2014
 
-ALL '#ff00f2'"

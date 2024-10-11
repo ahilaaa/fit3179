@@ -4,7 +4,7 @@
   "width": "container",
   "height": 300,
   "data": {
-    "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/Council%20Income%20FastFood.csv",
+    "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/FastFood/Council%20Income%20FastFood.csv",
     "format": {"type": "csv"}
   },
   "transform": [
@@ -16,7 +16,7 @@
   "params": [
     {
       "name": "fast_food_selection",
-      "value": "Total Fast Food Count",
+      "value": "McDonald's Count",
       "bind": {
         "input": "select",
         "options": [
@@ -31,7 +31,7 @@
           "Hungry Jack's",
           "KFC"
         ],
-        "name": "Select Fast Food Type: "
+        "name": "Select Fast Food Chain: "
       }
     }
   ],
@@ -53,19 +53,23 @@
       "field": "Selected Fast Food Count",
       "type": "quantitative",
       "aggregate": "max",
-      "scale": {"scheme": "orangered"},
+      "scale": {
+        "scheme": {
+          "expr": "fast_food_selection == 'Total Fast Food Count' ? 'purples' : fast_food_selection == \"McDonald's Count\" ? 'yelloworangebrown' : fast_food_selection == \"Hungry Jack's Count\" ? 'oranges' : 'reds'"
+        }
+      },
       "legend": {"title": "No. Locations"}
     },
     "tooltip": [
       {
-        "field": "Selected Fast Food Count",
-        "type": "quantitative",
-        "title": "No. Fast Food Locations"
-      },
-      {
         "field": "council",
         "type": "nominal",
         "title": "Council"
+      },
+      {
+        "field": "Selected Fast Food Count",
+        "type": "quantitative",
+        "title": "No. Fast Food Locations"
       },
       {
         "field": "Median taxable income 2021-22",
@@ -79,6 +83,7 @@
     "axis": {"grid": false}
   }
 }
+
 
 
 
