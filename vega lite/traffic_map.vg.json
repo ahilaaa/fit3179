@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 800,
+    "width": "container",
     "height": 600,
     "title": "Traffic Volume: Victoria",
     "data": {
@@ -13,7 +13,7 @@
     "params": [
       {
         "name": "zoomLevel",
-        "value": 30000,
+        "value": 25000,
         "bind": {
           "input": "range",
           "min": 5000,
