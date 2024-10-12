@@ -44,3 +44,20 @@ h1 {
 }
 
 
+/* font for SELECT parameter */
+input[type="range"], 
+input[type="number"], 
+select, 
+label {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;  /* You can adjust this size to match your preferences */
+    font-weight: bold;
+}
+
+/* Optional: Adjust padding or other styles for a consistent look */
+input[type="range"], 
+input[type="number"], 
+select {
+    padding: 1px;
+}
+

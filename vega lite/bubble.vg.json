@@ -41,7 +41,7 @@
       "stroke": "black",
       "strokeWidth": 1,
       "color": {
-    "expr": "selectionVar === 'McDonald\\'s Count' ? '#ffdd00' : selectionVar === 'Hungry Jack\\'s Count' ? '#ff6600' : selectionVar === 'KFC Count' ? '#ff0000' : '#9757e6'"
+    "expr": "selectionVar === 'McDonald\\'s Count' ? '#ffdd00' : selectionVar === 'Hungry Jack\\'s Count' ? 'orange' : selectionVar === 'KFC Count' ? '#red' : '#9757e6'"
   }
     },
     "encoding": {

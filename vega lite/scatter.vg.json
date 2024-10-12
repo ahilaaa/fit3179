@@ -23,7 +23,11 @@
     "y": {
       "field": "Adults - Obesity - ASR",
       "type": "quantitative",
-      "title": "Obesity Rate (%)"
+      "title": "Obesity Rate (%)",
+      "scale": {"domain": [10, 40]},
+      "axis": {
+            "tickMinStep": 5
+        }
     },
     "size": {
       "field": "Total Fast Food Count",
@@ -44,7 +48,10 @@
       {"field": "Total Fast Food Count", "type": "quantitative", "title": "Fast Food Count"},
       {"field": "Individuals 2021-22", "type": "quantitative", "title": "Population"}
     ]
-  }
+  },
+  "config": {
+      "axis": {"grid": false}
+    }
 }
 
 

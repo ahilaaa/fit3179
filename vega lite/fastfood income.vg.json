@@ -3,10 +3,11 @@
   "title": "Fast Food Locations in Victoria",
   "width": "container",
   "height": 550,
+ 
   "params": [
     {
       "name": "zoomLevel",
-      "value": 20000,
+      "value": 25000,
       "bind": {
         "input": "range",
         "min": 4000,
@@ -138,9 +139,9 @@
     {
       "data": {
         "values": [
-          {"Chain": "McDonald's"},
           {"Chain": "KFC"},
-          {"Chain": "Hungry Jack's"}
+          {"Chain": "Hungry Jack's"},
+          {"Chain": "McDonald's"}
         ]
       },
       "mark": {
@@ -152,12 +153,16 @@
           "field": "Chain",
           "type": "nominal",
           "scale": {
-            "domain": ["McDonald's", "KFC", "Hungry Jack's"],
-            "range": ["#ffdd00", "#ff0000", "#ff6600"]
+            "domain": ["KFC", "Hungry Jack's", "McDonald's" ],
+            "range": ["red", "orange", "#ffe600" ]
           },
           "legend": {
             "title": "Fast Food Chain",
-            "orient": "right"
+            "orient": "right",
+            "symbolSize": 200,
+            "symbolStrokeColor":"black",
+            "symbolStrokeWidth":0.5
+
           }
         },
         "shape": {"value": "circle"},
@@ -178,7 +183,7 @@
       ],
       "mark": {
         "type": "circle",
-        "color": "#ff0000",
+        "color": "red",
         "stroke": "black",
         "strokeWidth": {"expr": "zoomLevel / 200000"},
         "opacity": 0.95,
@@ -205,7 +210,7 @@
       ],
       "mark": {
         "type": "circle",
-        "color": "#ff6600",
+        "color": "orange",
         "stroke": "black",
         "strokeWidth": {"expr": "zoomLevel / 200000"},
         "opacity": 0.95,
@@ -232,7 +237,7 @@
       ],
       "mark": {
         "type": "circle",
-        "color": "#ffdd00",
+        "color": "#ffe600",
         "stroke": "black",
         "strokeWidth": {"expr": "zoomLevel / 200000"},
         "opacity": 0.95,
