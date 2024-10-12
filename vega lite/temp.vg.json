@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
   "height": 550,
-  "title": "Overweight and Obesity Rates by Council: Victoria",
+  "title": "Obesity Rates by Council: Victoria",
   "params": [
     {
       "name": "zoomLevel",
@@ -12,7 +12,7 @@
         "min": 4000,
         "max": 100000,
         "step": 100,
-        "name": "SELECT Zoom: "
+        "name": "SELECT Zoom"
       }
     },
     {
@@ -20,8 +20,8 @@
       "value": "Adults - Obesity - ASR",
       "bind": {
         "input": "select",
-        "options": ["Adults - Obesity - ASR", "Adults - Overweight/Obese - ASR"],
-        "name": "SELECT Category: "
+        "options": ["Adults - Obesity - ASR", "Adults - Overweight/Obesity - ASR"],
+        "name": "SELECT Metric"
       }
     }
   ],
@@ -57,7 +57,7 @@
               "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/Obesity/Merged/Obesity%20Council%20Suburb.csv"
             },
             "key": "suburb",
-            "fields": ["Adults - Obesity - ASR", "Adults - Overweight/Obese - ASR", "council"]
+            "fields": ["Adults - Obesity - ASR", "Adults - Overweight/Obesity - ASR", "council"]
           }
         },
         {
@@ -71,13 +71,11 @@
           "field": "selected_rate",
           "type": "quantitative",
           "scale": {
-            "domain": {"expr": "selectedMetric === 'Adults - Obesity - ASR' ? [14, 40] : [45, 75]"},
-            "scheme": "darkmulti",
-            "reverse": true
-                            
+            "domain": {"expr": "selectedMetric === 'Adults - Obesity - ASR' ? [0, 40] : [0, 80]"},
+            "range": ["#feebe2", "#fbb4b9", "#f768a1", "#c51b8a", "#4f0a4a"]
           },
           "legend": {
-            "title": "Rate (%)"
+            "title":"temp"
           }
         },
         "tooltip": [
@@ -90,6 +88,5 @@
   ]
 }
 
-
-
-
+  
+  
