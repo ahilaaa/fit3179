@@ -75,10 +75,51 @@ def add_fast_food_count(income_data_path, fast_food_data_path, output_data_path,
 
 
 
+#  obesity, council, suburb: "VIC"
 
 
+
+
+# merge Obesity Rates x Council     WITH    Council x Income x No. Fast Food
 
 # merging for obestiy rates by council
+merged_council = pd.read_csv("/Users/ahila/Desktop/fit3179/data/csv/Obesity/Vic-Table 1.csv")
+
+# FOR EACH COUNCIL in Vic-Table 1 -> retrieve list of all suburbs and make long format
+# check council Vic-Table-1 exists for Suburbs VIC Full
+
+'''
+import pandas as pd
+
+# Paths to the CSV files
+file1_path = "/Users/ahila/Desktop/fit3179/data/csv/FastFood/Merged/Suburb Obesity FastFood.csv"
+file2_path = "/Users/ahila/Desktop/fit3179/data/csv/FastFood/Merged/Merged Income FastFood.csv"
+
+df_obesity = pd.read_csv(file1_path)
+df_income_fastfood = pd.read_csv(file2_path)
+
+# Select the necessary columns from the obesity dataframe, including "suburb", "Adults - Obesity Rate", and "council"
+df_obesity = df_obesity[['Adults - Obesity Rate', 'council', 'suburb',"KFC Count" ,"McDonald's Count","Hungry Jack's Count"]]
+
+# Merge the dataframes on the "suburb" column
+merged_df = pd.merge(df_obesity, df_income_fastfood,on="suburb", how="inner")
+
+# aggregate fast food counts by council (add up all suburbs)
+# Group by the "council" column and sum up "KFC Count" and "McDonald's Count"
+merged_df = merged_df.groupby('council_x').agg({
+    'KFC Count_x': 'sum',
+    "McDonald's Count_x": 'sum',
+    "Hungry Jack's Count_x": 'sum',
+    'Adults - Obesity Rate': 'first'
+}).reset_index()
+
+merged_df.to_csv('/Users/ahila/Desktop/fit3179/data/csv/FastFood/Merged/Council Obesity FastFood.csv', index=False)'''
+
+
+
+
+
+
 
 '''
 

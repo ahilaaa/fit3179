@@ -1,9 +1,7 @@
 council,suburb,Adults - Obesity Rate
 Melbourne,MELBOURNE,15.3
-Melbourne,MELBOURNE,15.3
 Melbourne,EAST MELBOURNE,15.3
 Melbourne,WEST MELBOURNE,15.3
-Melbourne,MELBOURNE,15.3
 Melbourne,ST KILDA ROAD CENTRAL,15.3
 Melbourne,ST KILDA ROAD MELBOURNE,15.3
 Melbourne,WORLD TRADE CENTRE,15.3
@@ -602,24 +600,24 @@ Surf Coast,FAIRHAVEN,27.3
 Surf Coast,MOGGS CREEK,27.3
 Surf Coast,BIG HILL,27.3
 Surf Coast,LORNE,27.3
-Colac Otway,APOLLO BAY,
-Colac Otway,CAPE OTWAY,
-Colac Otway,MARENGO,
-Colac Otway,PETTICOAT CREEK,
-Colac Otway,SKENES CREEK,
-Colac Otway,SKENES CREEK NORTH,
-Colac Otway,GREY RIVER,
-Colac Otway,KENNETT RIVER,
-Colac Otway,SEPARATION CREEK,
-Colac Otway,SUGARLOAF,
-Colac Otway,WONGARRA,
-Colac Otway,WYE RIVER,
-Colac Otway,BENWERRIN,
-Colac Otway,BOONAH,
-Colac Otway,DEANS MARSH,
-Colac Otway,PENNYROYAL,
-Colac Otway,FORREST,
-Colac Otway,MOUNT SABINE,
+Colac Otway,APOLLO BAY,31.3
+Colac Otway,CAPE OTWAY,31.3
+Colac Otway,MARENGO,31.3
+Colac Otway,PETTICOAT CREEK,31.3
+Colac Otway,SKENES CREEK,31.3
+Colac Otway,SKENES CREEK NORTH,31.3
+Colac Otway,GREY RIVER,31.3
+Colac Otway,KENNETT RIVER,31.3
+Colac Otway,SEPARATION CREEK,31.3
+Colac Otway,SUGARLOAF,31.3
+Colac Otway,WONGARRA,31.3
+Colac Otway,WYE RIVER,31.3
+Colac Otway,BENWERRIN,31.3
+Colac Otway,BOONAH,31.3
+Colac Otway,DEANS MARSH,31.3
+Colac Otway,PENNYROYAL,31.3
+Colac Otway,FORREST,31.3
+Colac Otway,MOUNT SABINE,31.3
 Corangamite,AIRE VALLEY,33.3
 Corangamite,BEECH FOREST,33.3
 Corangamite,FERGUSON,33.3
@@ -628,10 +626,10 @@ Corangamite,WATTLE HILL,33.3
 Corangamite,WEEAPROINAH,33.3
 Corangamite,WYELANGTA,33.3
 Corangamite,YUULONG,33.3
-Colac Otway,GLENAIRE,
-Colac Otway,HORDERN VALE,
-Colac Otway,JOHANNA,
-Colac Otway,LAVERS HILL,
+Colac Otway,GLENAIRE,31.3
+Colac Otway,HORDERN VALE,31.3
+Colac Otway,JOHANNA,31.3
+Colac Otway,LAVERS HILL,31.3
 Corangamite,CARLISLE RIVER,33.3
 Corangamite,CHAPPLE VALE,33.3
 Corangamite,GELLIBRAND,33.3
@@ -642,18 +640,18 @@ Surf Coast,MODEWARRE,27.3
 Surf Coast,MORIAC,27.3
 Surf Coast,MOUNT MORIAC,27.3
 Surf Coast,PARAPARAP,27.3
-Colac Otway,BAMBRA,
-Colac Otway,OMBERSLEY,
-Colac Otway,WENSLEYDALE,
-Colac Otway,WINCHELSEA,
-Colac Otway,WINCHELSEA SOUTH,
-Colac Otway,WURDIBOLUC,
+Colac Otway,BAMBRA,31.3
+Colac Otway,OMBERSLEY,31.3
+Colac Otway,WENSLEYDALE,31.3
+Colac Otway,WINCHELSEA,31.3
+Colac Otway,WINCHELSEA SOUTH,31.3
+Colac Otway,WURDIBOLUC,31.3
 Surf Coast,BIRREGURRA,27.3
-Colac Otway,BARWON DOWNS,
-Colac Otway,GERANGAMETE,
-Colac Otway,MURROON,
-Colac Otway,WARNCOORT,
-Colac Otway,WHOOREL,
+Colac Otway,BARWON DOWNS,31.3
+Colac Otway,GERANGAMETE,31.3
+Colac Otway,MURROON,31.3
+Colac Otway,WARNCOORT,31.3
+Colac Otway,WHOOREL,31.3
 Corangamite,ALVIE,33.3
 Corangamite,BALINTORE,33.3
 Corangamite,BARONGAROOK,33.3
@@ -679,34 +677,34 @@ Corangamite,WARRION,33.3
 Corangamite,WOOL WOOL,33.3
 Corangamite,YEO,33.3
 Corangamite,YEODENE,33.3
-Colac Otway,COLAC,
-Colac Otway,COLAC EAST,
-Colac Otway,COLAC WEST,
-Colac Otway,ELLIMINYT,
+Colac Otway,COLAC,31.3
+Colac Otway,COLAC EAST,31.3
+Colac Otway,COLAC WEST,31.3
+Colac Otway,ELLIMINYT,31.3
 Corangamite,BEEAC,33.3
 Corangamite,CUNDARE,33.3
 Corangamite,CUNDARE NORTH,33.3
 Corangamite,EURACK,33.3
 Corangamite,WEERING,33.3
-Colac Otway,COROROOKE,
-Colac Otway,BOOKAAR,
-Colac Otway,BOSTOCKS CREEK,
-Colac Otway,BUNGADOR,
-Colac Otway,CAMPERDOWN,
-Colac Otway,CARPENDEIT,
-Colac Otway,CHOCOLYN,
-Colac Otway,GNOTUK,
-Colac Otway,KARIAH,
-Colac Otway,KOALLAH,
-Colac Otway,LESLIE MANOR,
-Colac Otway,POMBORNEIT,
-Colac Otway,POMBORNEIT NORTH,
-Colac Otway,SKIBO,
-Colac Otway,SOUTH PURRUMBETE,
-Colac Otway,STONYFORD,
-Colac Otway,TANDAROOK,
-Colac Otway,TESBURY,
-Colac Otway,WEERITE,
+Colac Otway,COROROOKE,31.3
+Colac Otway,BOOKAAR,31.3
+Colac Otway,BOSTOCKS CREEK,31.3
+Colac Otway,BUNGADOR,31.3
+Colac Otway,CAMPERDOWN,31.3
+Colac Otway,CARPENDEIT,31.3
+Colac Otway,CHOCOLYN,31.3
+Colac Otway,GNOTUK,31.3
+Colac Otway,KARIAH,31.3
+Colac Otway,KOALLAH,31.3
+Colac Otway,LESLIE MANOR,31.3
+Colac Otway,POMBORNEIT,31.3
+Colac Otway,POMBORNEIT NORTH,31.3
+Colac Otway,SKIBO,31.3
+Colac Otway,SOUTH PURRUMBETE,31.3
+Colac Otway,STONYFORD,31.3
+Colac Otway,TANDAROOK,31.3
+Colac Otway,TESBURY,31.3
+Colac Otway,WEERITE,31.3
 Moyne,TERANG,34.3
 Corangamite,BOORCAN,33.3
 Corangamite,CUDGEE,33.3
@@ -726,16 +724,16 @@ Corangamite,NOORAT EAST,33.3
 Corangamite,PANMURE,33.3
 Corangamite,TAROON,33.3
 Corangamite,THE SISTERS,33.3
-Colac Otway,BULLAHARRE,
-Colac Otway,COBDEN,
-Colac Otway,COBRICO,
-Colac Otway,ELINGAMITE,
-Colac Otway,ELINGAMITE NORTH,
-Colac Otway,GLENFYNE,
-Colac Otway,JANCOURT,
-Colac Otway,JANCOURT EAST,
-Colac Otway,NAROGHID,
-Colac Otway,SIMPSON,
+Colac Otway,BULLAHARRE,31.3
+Colac Otway,COBDEN,31.3
+Colac Otway,COBRICO,31.3
+Colac Otway,ELINGAMITE,31.3
+Colac Otway,ELINGAMITE NORTH,31.3
+Colac Otway,GLENFYNE,31.3
+Colac Otway,JANCOURT,31.3
+Colac Otway,JANCOURT EAST,31.3
+Colac Otway,NAROGHID,31.3
+Colac Otway,SIMPSON,31.3
 Corangamite,SCOTTS CREEK,33.3
 Moyne,AYRFORD,34.3
 Moyne,BRUCKNELL,34.3
@@ -948,9 +946,9 @@ West Wimmera,ULLSWATER,33.0
 West Wimmera,APSLEY,33.0
 West Wimmera,BENAYEO,33.0
 West Wimmera,BRINGALBERT,33.0
-Colac Otway,HESSE,
-Colac Otway,INVERLEIGH,
-Colac Otway,WINGEEL,
+Colac Otway,HESSE,31.3
+Colac Otway,INVERLEIGH,31.3
+Colac Otway,WINGEEL,31.3
 Corangamite,CRESSY,33.3
 Golden Plains,BERRYBANK,35.4
 Golden Plains,DUVERNEY,35.4
@@ -963,9 +961,9 @@ Corangamite,LARRALEA,33.3
 Corangamite,VITE VITE,33.3
 Corangamite,VITE VITE NORTH,33.3
 Golden Plains,TEESDALE,35.4
-Colac Otway,BARUNAH PARK,
-Colac Otway,BARUNAH PLAINS,
-Colac Otway,SHELFORD,
+Colac Otway,BARUNAH PARK,31.3
+Colac Otway,BARUNAH PLAINS,31.3
+Colac Otway,SHELFORD,31.3
 Golden Plains,ROKEWOOD,35.4
 Golden Plains,BANNOCKBURN,35.4
 Golden Plains,GHERINGHAP,35.4
@@ -2369,7 +2367,7 @@ Murrindindi,SEYMOUR,32.7
 Murrindindi,SEYMOUR SOUTH,32.7
 Murrindindi,TRAWOOL,32.7
 Murrindindi,WHITEHEADS CREEK,32.7
-Latrobe (Vic.),SEYMOUR,
+Latrobe,SEYMOUR,33.8
 Mitchell,PUCKAPUNYAL,33.6
 Mitchell,PUCKAPUNYAL MILPO,33.6
 Mitchell,MANGALORE,33.6
@@ -2433,7 +2431,7 @@ Mansfield,WINTON,33.9
 Mansfield,WINTON NORTH,33.9
 Moira,BOWEYA,34.6
 Moira,BOWEYA NORTH,34.6
-Moira,GLENROWAN,34.6
+Moira,GLENROWAN,34.6F
 Moira,GLENROWAN WEST,34.6
 Moira,GRETA,34.6
 Moira,GRETA SOUTH,34.6
@@ -2510,44 +2508,44 @@ Darebin,WODONGA,23.9
 Wodonga,WEST WODONGA,34.8
 Wodonga,WODONGA,34.8
 Wodonga,WODONGA PLAZA,34.8
-Albury,ALLANS FLAT,
-Albury,BANDIANA,
-Albury,BARANDUDA,
-Albury,BARNAWARTHA NORTH,
-Albury,BELLBRIDGE,
-Albury,BERRINGAMA,
-Albury,BETHANGA,
-Albury,BONEGILLA,
-Albury,BUNGIL,
-Albury,CASTLE CREEK,
-Albury,CORAL BANK,
-Albury,DEDERANG,
-Albury,EBDEN,
-Albury,GATEWAY ISLAND,
-Albury,GLEN CREEK,
-Albury,GUNDOWRING,
-Albury,HUME WEIR,
-Albury,HUON CREEK,
-Albury,KANCOONA,
-Albury,KANCOONA SOUTH,
-Albury,KERGUNYAH,
-Albury,KERGUNYAH SOUTH,
-Albury,KIEWA,
-Albury,KILLARA,
-Albury,LAKE HUME VILLAGE,
-Albury,LENEVA,
-Albury,LONE PINE,
-Albury,LUCYVALE,
-Albury,MONGANS BRIDGE,
-Albury,MOUNT ALFRED,
-Albury,OSBORNES FLAT,
-Albury,RUNNING CREEK,
-Albury,STAGHORN FLAT,
-Albury,TALGARNO,
-Albury,TANGAMBALANGA,
-Albury,THOLOGOLONG,
-Albury,UPPER GUNDOWRING,
-Albury,WODONGA FORWARD,
+Albury,ALLANS FLAT,34.8
+Albury,BANDIANA,34.8
+Albury,BARANDUDA,34.8
+Albury,BARNAWARTHA NORTH,34.8
+Albury,BELLBRIDGE,34.8
+Albury,BERRINGAMA,34.8
+Albury,BETHANGA,34.8
+Albury,BONEGILLA,34.8
+Albury,BUNGIL,34.8
+Albury,CASTLE CREEK,34.8
+Albury,CORAL BANK,34.8
+Albury,DEDERANG,34.8
+Albury,EBDEN,34.8
+Albury,GATEWAY ISLAND,34.8
+Albury,GLEN CREEK,34.8
+Albury,GUNDOWRING,34.8
+Albury,HUME WEIR,34.8
+Albury,HUON CREEK,34.8
+Albury,KANCOONA,34.8
+Albury,KANCOONA SOUTH,34.8
+Albury,KERGUNYAH,34.8
+Albury,KERGUNYAH SOUTH,34.8
+Albury,KIEWA,34.8
+Albury,KILLARA,34.8
+Albury,LAKE HUME VILLAGE,34.8
+Albury,LENEVA,34.8
+Albury,LONE PINE,34.8
+Albury,LUCYVALE,34.8
+Albury,MONGANS BRIDGE,34.8
+Albury,MOUNT ALFRED,34.8
+Albury,OSBORNES FLAT,34.8
+Albury,RUNNING CREEK,34.8
+Albury,STAGHORN FLAT,34.8
+Albury,TALGARNO,34.8
+Albury,TANGAMBALANGA,34.8
+Albury,THOLOGOLONG,34.8
+Albury,UPPER GUNDOWRING,34.8
+Albury,WODONGA FORWARD,34.8
 Wodonga,BANDIANA,34.8
 Wodonga,BANDIANA MILPO,34.8
 Towong,CHARLEROI,32.9
@@ -2956,7 +2954,7 @@ Yarra Ranges,TANJIL BREN,27.1
 Yarra Ranges,TOORONGO,27.1
 Yarra Ranges,VESPER,27.1
 South Gippsland,THORPDALE,31.2
-Latrobe),DRIFFIELD,
+Latrobe,DRIFFIELD,33.8
 Latrobe,HAZELWOOD,33.8
 Latrobe,HAZELWOOD NORTH,33.8
 Latrobe,HAZELWOOD SOUTH,33.8
