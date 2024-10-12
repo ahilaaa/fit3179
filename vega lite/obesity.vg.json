@@ -72,8 +72,8 @@
           "type": "quantitative",
           "scale": {
             "domain": {"expr": "selectedMetric === 'Adults - Obesity - ASR' ? [14, 40] : [45, 75]"},
-            "scheme": "darkmulti",
-            "reverse": true
+            "scheme": "plasma",
+            "reverse": true  
                             
           },
           "legend": {
@@ -83,7 +83,7 @@
         "tooltip": [
           {"field": "properties.vic_loca_2", "type": "nominal", "title": "Suburb"},
           {"field": "council", "type": "nominal", "title": "Council"},
-          {"field": "selected_rate", "type": "quantitative", "title": "temp"}
+          {"field": "selected_rate", "type": "quantitative", "title": "Rate (%)"}
         ]
       }
     }

@@ -56,7 +56,7 @@
         },
         "scale": {
             "domain": {
-            "expr": "selectionVar === 'McDonald\\'s Count' ? [0, 12] : selectionVar === 'Hungry Jack\\'s Count' ? [0, 8] : selectionVar === 'KFC Count' ? [0, 15] : [0, 35]"},
+            "expr": "selectionVar === 'McDonald\\'s Count' ? [0, 13] : selectionVar === 'Hungry Jack\\'s Count' ? [0, 9] : selectionVar === 'KFC Count' ? [0, 12] : [0, 32]"},
             "padding": 20,
             "nice": false
         }
