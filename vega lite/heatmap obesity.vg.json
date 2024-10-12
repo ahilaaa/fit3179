@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
-            "text": "Obesity and Overweight+Obesity Rates (%) vs Fast Food Location Density",
+            "text": "Obesity and Overweight Rates (%) vs Fast Food Location Density",
             "anchor": "start",  
             "dx": 0              
         },
@@ -33,7 +33,7 @@
           ],
           "labels": [
             "Obesity Rate",
-            "Overweight + Obesity Rate"
+            "Overweight and Obesity Rate"
           ],
           "name": "SELECT Category: "
         }
@@ -97,7 +97,7 @@
         {
           "field": "Selected Rate",
           "type": "quantitative",
-          "title": "Obesity / Overweight+Obesity Rate (%)"
+          "title": "Obesity / Overweight and Obesity Rate (%)"
         },
         {
           "field": "Selected Fast Food Count",

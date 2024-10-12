@@ -45,7 +45,7 @@
           "lookup": "properties.vic_loca_2",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/Obesity/Merged/Merged%20Council%.csv"
+              "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/Obesity/Merged/Obesity%20Council20Suburb.csv"
             },
             "key": "suburb",
             "fields": ["Adults - Obesity - ASR", "council"]
