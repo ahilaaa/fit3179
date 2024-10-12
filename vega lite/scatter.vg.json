@@ -18,7 +18,7 @@
       "field": "Median taxable income 2021-22",
       "type": "quantitative",
       "title": "Median Taxable Income",
-      "scale": { "domain": [40000, 80000] }
+      "scale": { "domain": [40000, 75000] }
     },
     "y": {
       "field": "Adults - Obesity - ASR",
