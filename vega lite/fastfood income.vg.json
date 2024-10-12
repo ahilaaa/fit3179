@@ -1,6 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Median Income and Fast Food Locations: Victoria",
+  "title": {
+        "text": "Median Income and Fast Food Locations: Victoria",
+        "fontSize": 15,
+        "offset": 15  
+      },
   "width": "container",
   "height": 550,
  

@@ -2,7 +2,11 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
   "height": 550,
-  "title": "Overweight and Obesity Rates by Council: Victoria",
+  "title": {
+        "text": "Overweight and Obesity Rates by Council: Victoria",
+        "fontSize": 15,
+        "offset": 15 
+      },
   "params": [
     {
       "name": "zoomLevel",

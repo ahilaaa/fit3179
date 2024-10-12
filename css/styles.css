@@ -10,6 +10,14 @@ h2,h3, h4 {
     
 }
 
+footer {
+    text-align: center;       /* Center the text */
+    font-size: 12px;          /* Adjust the font size */
+    padding: 0px;            /* Add some padding */
+    position: relative;       /* Adjusts the position at the bottom */
+    bottom: 0;
+}
+
 
 .page {
     width: 900px;

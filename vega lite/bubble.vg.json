@@ -1,6 +1,10 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Median Income, Fast Food Location Density and Population: Victoria",
+    "title": {
+        "text": "Median Income, Fast Food Location Density and Population: Victoria",
+        "fontSize": 15,
+        "offset": 15  
+      },
     "width": "container",
     "height": 300,
     "data": {

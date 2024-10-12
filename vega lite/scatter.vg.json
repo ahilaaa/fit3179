@@ -1,6 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Median Income vs. Obesity Rates (%)",
+  "title": {
+        "text": "Median Income vs. Obesity Rates (%)",
+        "fontSize": 15,
+        "offset": 15 
+      },
   "width": "container",
   "height": 300,
   "data": {
