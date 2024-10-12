@@ -1,7 +1,13 @@
+
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: bisque;
+    background-color: #fdf3e0;
 }
+
+h2,h3, h4 , p {
+    color: #3c3c3c;  /* Text color */
+}
+
 
 h2,h3, h4 {
     margin-top: 0px;
@@ -9,6 +15,11 @@ h2,h3, h4 {
     margin-bottom: 7px;
     
 }
+
+img {
+    border-radius: 5px;  /* Adjust the px value for more or less rounding */
+}
+
 
 footer {
     text-align: center;       /* Center the text */
@@ -21,10 +32,10 @@ footer {
 
 .page {
     width: 900px;
-    background-color: white;
+    background-color:   #ffffff;
     margin: auto;
     padding: 50px;
-    padding-top: 35px;
+    padding-top: 50px;
     border-radius: 15px; /* rounded corner */
     margin-top: 10px; /* inner white area starts further down*/
     margin-bottom: 10px;
@@ -34,7 +45,6 @@ footer {
 .vis-container {
     width: 100%;
 }
-
 
 
 .description-right {
