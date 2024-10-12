@@ -1,0 +1,86 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Obesity Rates vs Fast Food Locations",
+    "width": "container",
+    "height": 300,
+    "data": {
+      "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/FastFood/Merged/Council%20Obesity%20FastFood.csv",
+      "format": {"type": "csv"}
+    },
+    "transform": [
+      {
+        "calculate": "datum[fast_food_selection]",
+        "as": "Selected Fast Food Count"
+      }
+    ],
+    "params": [
+      {
+        "name": "fast_food_selection",
+        "value": "McDonald's Count",
+        "bind": {
+          "input": "select",
+          "options": [
+            "Total Fast Food Count",
+            "McDonald's Count",
+            "Hungry Jack's Count",
+            "KFC Count"
+          ],
+          "labels": [
+            "All",
+            "McDonald's",
+            "Hungry Jack's",
+            "KFC"
+          ],
+          "name": "Select Fast Food Chain: "
+        }
+      }
+    ],
+    "mark": "rect",
+    "encoding": {
+      "x": {
+        "bin": true,
+        "field": "Obesity Rate",
+        "type": "quantitative",
+        "axis": {"title": "Obesity Rate (%)"}
+      },
+      "y": {
+        "bin": true,
+        "field": "Selected Fast Food Count",
+        "type": "quantitative",
+        "axis": {"title": "No. of Fast Food Locations"}
+      },
+      "color": {
+        "field": "Selected Fast Food Count",
+        "type": "quantitative",
+        "aggregate": "max",
+        "scale": {
+          "scheme": {
+            "expr": "fast_food_selection == 'Total Fast Food Count' ? 'purples' : fast_food_selection == \"McDonald's Count\" ? 'yelloworangebrown' : fast_food_selection == \"Hungry Jack's Count\" ? 'oranges' : 'reds'"
+          }
+        },
+        "legend": {"title": "No. Locations"}
+      },
+      "tooltip": [
+        {
+          "field": "council",
+          "type": "nominal",
+          "title": "Council"
+        },
+        {
+          "field": "Selected Fast Food Count",
+          "type": "quantitative",
+          "title": "No. Fast Food Locations"
+        },
+        {
+          "field": "Obesity Rate",
+          "type": "quantitative",
+          "title": "Obesity Rate (%)"
+        }
+      ]
+    },
+    "config": {
+      "view": {"stroke": "transparent"},
+      "axis": {"grid": false}
+    }
+  }
+  

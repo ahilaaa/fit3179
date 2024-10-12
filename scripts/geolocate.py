@@ -83,7 +83,17 @@ def add_fast_food_count(income_data_path, fast_food_data_path, output_data_path,
 # merge Obesity Rates x Council     WITH    Council x Income x No. Fast Food
 
 # merging for obestiy rates by council
-merged_council = pd.read_csv("/Users/ahila/Desktop/fit3179/data/csv/Obesity/Vic-Table 1.csv")
+data = pd.read_csv("/Users/ahila/Desktop/fit3179/data/csv/FastFood/Merged/Council Obesity FastFood.csv")
+
+
+
+# Add a new column for Total Fast Food Count
+data['Total Fast Food Count'] = data['KFC Count'] + data["McDonald's Count"] + data["Hungry Jack's Count"]
+
+data.to_csv("/Users/ahila/Desktop/fit3179/data/csv/FastFood/Merged/Council Obesity FastFood.csv", index=False)
+
+
+
 
 # FOR EACH COUNCIL in Vic-Table 1 -> retrieve list of all suburbs and make long format
 # check council Vic-Table-1 exists for Suburbs VIC Full
