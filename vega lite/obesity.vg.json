@@ -48,11 +48,11 @@
               "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/Obesity/Merged/Obesity%20Council%20Suburb.csv"
             },
             "key": "suburb",
-            "fields": ["Adults - Obesity Rate", "council"]
+            "fields": ["Adults - Obesity - ASR", "council"]
           }
         },
         {
-          "calculate": "toNumber(replace(replace(datum['Adults - Obesity Rate'], ',', ''), '\"', ''))",
+          "calculate": "toNumber(replace(replace(datum['Adults - Obesity - ASR'], ',', ''), '\"', ''))",
           "as": "obesity_rate"
         }
       ],
