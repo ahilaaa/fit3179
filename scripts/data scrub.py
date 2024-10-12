@@ -13,7 +13,7 @@ df_obesity['Median taxable income 2021-22'] = pd.to_numeric(df_obesity['Median t
 df_obesity['Average taxable income 2021-22'] = pd.to_numeric(df_obesity['Average taxable income 2021-22'].str.replace(',', ''), errors='coerce')
 
 
-merged_df = df_obesity.groupby('council').agg({
+merged_df = df_obesity.groupby('council_y').agg({
     'Individuals 2021-22': 'mean' ,
     'Median taxable income 2021-22': 'mean' ,
     'Average taxable income 2021-22': 'mean',
@@ -67,9 +67,9 @@ data['Total Fast Food Count'] = data['KFC Count'] + data["McDonald's Count"] + d
 data.to_csv("/Users/ahila/Desktop/fit3179/data/csv/FastFood/Merged/Council Obesity FastFood.csv", index=False)'''
 
 
-
 '''
-COMBINE EVERYTHING TOGETHER !!! BIG BOI COMBINATION FILE
+
+#COMBINE EVERYTHING TOGETHER !!! BIG BOI COMBINATION FILE
 
 # for every suburb, retrieve corresponding income information
 #  and fast food count ( /Users/ahila/Desktop/fit3179/data/csv/FastFood/Merged/Merged Income FastFood.csv)
@@ -83,7 +83,7 @@ obesity_data = pd.read_csv(obesity_file)
 income_fastfood_data = pd.read_csv(income_fastfood_file)
 
 # Merge the two dataframes on the 'suburb' column
-merged_data = pd.merge(obesity_data, income_fastfood_data, on='suburb', how='left')
+merged_data = pd.merge(income_fastfood_data, obesity_data, on='suburb', how='left')
 
 
 # Remove duplicate suburb entries
@@ -98,7 +98,6 @@ output_file = '/Users/ahila/Desktop/fit3179/data/csv/FastFood/Merged/Suburb Obes
 merged_data.to_csv(output_file, index=False)
 
 print(f"Cleaned merged data saved to {output_file}")'''
-
 
 
 
