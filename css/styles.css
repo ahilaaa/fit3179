@@ -7,15 +7,17 @@ h1 {
 }
 
 body {
-    background-color: lightgray;
+    background-color: rgb(241, 219, 180);
 }
 
 .page {
-    width: 850px;
+    width: 900px;
     background-color: white;
     margin: auto;
     padding: 50px;
     padding-top: 35px;
+    border-radius: 15px; 
+
 }
 
 .vis-container {
