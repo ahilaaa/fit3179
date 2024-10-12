@@ -168,7 +168,7 @@
 
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/FastFood/KFC%20Locations.csv",
+        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/FastFood/Locations/KFC%20Locations.csv",
         "format": {"type": "csv"}
       },
       "transform": [
@@ -195,7 +195,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/FastFood/Hungry%20Jack's%20Locations.csv",
+        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/FastFood/Locations/Hungry%20Jack's%20Locations.csv",
         "format": {"type": "csv"}
       },
       "transform": [
@@ -222,7 +222,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/FastFood/McDonald's%20Locations.csv",
+        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/FastFood/Locations/McDonald's%20Locations.csv",
         "format": {"type": "csv"}
       },
       "transform": [

@@ -8,7 +8,7 @@
     "width": "container",
     "height": 300,
     "data": {
-      "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/FastFood/Merged/Council%20Obesity%20FastFood.csv",
+      "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/FastFood/Merged/Merged%20Council.csv",
       "format": {"type": "csv"}
     },
     "transform": [
