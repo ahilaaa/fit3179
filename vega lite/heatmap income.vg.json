@@ -37,18 +37,20 @@
   ],
   "mark": "rect",
   "encoding": {
-    "x": {
+    "y": {
       "bin": true,
       "field": "Median taxable income 2021-22",
       "type": "quantitative",
       "axis": {"title": "Median Income (2021-22)"}
       
     },
-    "y": {
+    "x": {
       "bin": true,
       "field": "Selected Fast Food Count",
       "type": "quantitative",
-      "axis": {"title": "Total Fast Food Locations"}
+      "axis": {
+        "title": "Total Fast Food Locations",
+        "tickMinStep": 1}
       
     },
     "color": {
