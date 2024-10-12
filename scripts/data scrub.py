@@ -1,5 +1,63 @@
 import pandas as pd
 
+# AGGREGATE BY COUNCIL : income, obesity rates, fast food location density
+
+# Paths to the CSV files
+file1_path = "/Users/ahila/Desktop/fit3179/data/csv/FastFood/Merged/Suburb Obesity Income FastFood.csv"
+
+df_obesity = pd.read_csv(file1_path)
+
+# numeric data is represented as "23,344" thanks to the ATO, we must clean and strip
+df_obesity['Individuals 2021-22'] = pd.to_numeric(df_obesity['Individuals 2021-22'].str.replace(',', ''), errors='coerce')
+df_obesity['Median taxable income 2021-22'] = pd.to_numeric(df_obesity['Median taxable income 2021-22'].str.replace(',', ''), errors='coerce')
+df_obesity['Average taxable income 2021-22'] = pd.to_numeric(df_obesity['Average taxable income 2021-22'].str.replace(',', ''), errors='coerce')
+
+
+merged_df = df_obesity.groupby('council').agg({
+    'Individuals 2021-22': 'mean' ,
+    'Median taxable income 2021-22': 'mean' ,
+    'Average taxable income 2021-22': 'mean',
+    'Adults - Obesity - ASR': 'first',
+    'Adults - Overweight/Obese - ASR': 'first',
+    'KFC Count': 'sum',
+    "McDonald's Count": 'sum',
+    "Hungry Jack's Count": 'sum',
+    "Total Fast Food Count": 'sum',
+}).reset_index()
+
+# Round all numeric columns to integers
+merged_df[['Individuals 2021-22', 'Median taxable income 2021-22', 'Average taxable income 2021-22']] = merged_df[['Individuals 2021-22', 'Median taxable income 2021-22', 'Average taxable income 2021-22']].round(0)
+
+merged_df.to_csv('/Users/ahila/Desktop/fit3179/data/csv/FastFood/Merged/Merged Council.csv', index=False)
+
+
+
+
+
+'''
+# MAKE COUNCIL OBESITY FAST FOOD COUNTS
+
+# Paths to the CSV files
+file1_path = "/Users/ahila/Desktop/fit3179/data/csv/FastFood/Merged/Suburb Obesity Income FastFood.csv"
+
+df_obesity = pd.read_csv(file1_path)
+
+merged_df = df_obesity.groupby('council').agg({
+    'KFC Count': 'sum',
+    "McDonald's Count": 'sum',
+    "Hungry Jack's Count": 'sum',
+    "Total Fast Food Count": 'sum',
+    'Adults - Obesity - ASR': 'first',
+    'Adults - Overweight/Obese - ASR': 'first'
+}).reset_index()
+
+merged_df.to_csv('/Users/ahila/Desktop/fit3179/data/csv/FastFood/Merged/Council Obesity FastFood.csv', index=False)'''
+
+
+
+
+
+
 '''
 data = pd.read_csv("/Users/ahila/Desktop/fit3179/data/csv/FastFood/Merged/Council Obesity FastFood.csv")
 
@@ -10,42 +68,9 @@ data.to_csv("/Users/ahila/Desktop/fit3179/data/csv/FastFood/Merged/Council Obesi
 
 
 
-# FOR EACH COUNCIL in Vic-Table 1 -> retrieve list of all suburbs and make long format
-# check council Vic-Table-1 exists for Suburbs VIC Full
-
-
-
-
-# Paths to the CSV files
-file1_path = "/Users/ahila/Desktop/fit3179/data/csv/FastFood/Merged/Suburb Obesity Income FastFood.csv"
-file2_path = "/Users/ahila/Desktop/fit3179/data/csv/FastFood/Merged/Merged Income FastFood.csv"
-
-df_obesity = pd.read_csv(file1_path)
-df_income_fastfood = pd.read_csv(file2_path)
-
-# Select the necessary columns from the obesity dataframe, including "suburb", "Adults - Obesity Rate", and "council"
-df_obesity = df_obesity[["Adults - Obesity - ASR", "Adults - Overweight/Obese - ASR", 'council', 'suburb',"KFC Count" ,"McDonald's Count","Hungry Jack's Count", "Total Fast Food Count"]]
-
-# Merge the dataframes on the "suburb" column
-merged_df = pd.merge(df_obesity, df_income_fastfood,on="suburb", how="left")
-
-# aggregate fast food counts by council (add up all suburbs)
-# Group by the "council" column and sum up "KFC Count" and "McDonald's Count"
-
-merged_df = merged_df.groupby('council_x').agg({
-    'KFC Count_x': 'sum',
-    "McDonald's Count_x": 'sum',
-    "Hungry Jack's Count_x": 'sum',
-    "Total Fast Food Count": 'sum',
-    'Adults - Obesity - ASR': 'first',
-    'Adults - Overweight/Obese - ASR': 'first'
-}).reset_index()
-
-merged_df.to_csv('/Users/ahila/Desktop/fit3179/data/csv/FastFood/Merged/Council Obesity FastFood2.csv', index=False)
-
-
-
 '''
+COMBINE EVERYTHING TOGETHER !!! BIG BOI COMBINATION FILE
+
 # for every suburb, retrieve corresponding income information
 #  and fast food count ( /Users/ahila/Desktop/fit3179/data/csv/FastFood/Merged/Merged Income FastFood.csv)
 

@@ -67,7 +67,8 @@
         "type": "quantitative",
         "axis": {
             "title": "No. Fast Food Locations",
-            "tickMinStep": 1
+            "tickMinStep": 1,
+            "format": "d"
         }
       },
       "y": {
