@@ -40,7 +40,7 @@
     <!-- pure grid group CHLOROPLETH FAST FOOD x INCOME-->
     <div class="pure-g">
       <div class="pure-u-1-1">
-        <div id="vis4" class="vis-container"></div>
+        <div id="vis1" class="vis-container"></div>
         <div class="description">
           <h3>Fast Food Locations in Victoria"</h3>
           <p> PARAGRAPH </p>
@@ -60,23 +60,27 @@
       </div>
     </div>
 
-    <!-- pure grid group HEATMAP-->
+    <!-- pure grid group HEATMAP INCOME-->
     <div class="pure-g">
       <div class="pure-u-1-2">
         <div id="vis3" class="vis-container"></div>
       </div>
 
       <div class="pure-u-1-2">
-        <div id="vis1" class="vis-container"></div>
+        <div class="description description-right">
+          <h2>First and Second Columns Combined</h2>
+          <p>TEXT</p>
+        </div>
       </div>
-
-
     </div>
+    <!-- end pure grid group -->
 
+
+    <!-- pure grid group TEXT -->
     <div class="pure-g">
       <div class="pure-u-1-1 small-font">
         <h3>TITLE </h3>
-        <p> Heatmap stuff </p>
+        <p> TEXT </p>
       </div>
     </div>
 
@@ -86,7 +90,7 @@
      <!-- pure grid group CHLOROPLETH OBESITY-->
      <div class="pure-g">
       <div class="pure-u-1-1">
-        <div id="vis5" class="vis-container"></div>
+        <div id="vis4" class="vis-container"></div>
         <div class="description">
           <h3>Obesity"</h3>
           <p> PARAGRAPH </p>
@@ -94,6 +98,21 @@
       </div>
     </div>
     <!-- end pure grid group -->
+
+      <!-- pure grid group HEATMAP OBESITY-->
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div id="vis5" class="vis-container"></div>
+        </div>
+  
+        <div class="pure-u-1-2">
+          <div class="description description-right">
+            <h2>First and Second Columns Combined</h2>
+            <p>TEXT</p>
+          </div>
+        </div>
+      </div>
+      <!-- end pure grid group -->
 
     <div class="pure-g">
       <div class="pure-u-1-1 small-font">
@@ -106,13 +125,14 @@
 
   <script type="text/javascript">
     
-    var specVis1 = "vega lite/heatmap2.vg.json";
-
+    var specVis1 = "vega lite/fastfood income.vg.json";
     var specVis2 = "vega lite/bubble.vg.json";
-    var specVis3 = "vega lite/heatmap.vg.json";
-    var specVis4 = "vega lite/fastfood_income.vg.json";
-    var specVis5 = "vega lite/obesity.vg.json";
+    var specVis3 = "vega lite/heatmap income.vg.json";
+
+    var specVis4 = "vega lite/obesity.vg.json";
+    var specVis5 = "vega lite/heatmap income.vg.json";
     
+
 
 
     //vegaEmbed('#vis1', specVis1, { "actions": false });
