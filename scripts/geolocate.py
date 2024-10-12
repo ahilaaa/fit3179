@@ -75,32 +75,24 @@ def add_fast_food_count(income_data_path, fast_food_data_path, output_data_path,
 
 
 
-#  obesity, council, suburb: "VIC"
-
-
-
-
-# merge Obesity Rates x Council     WITH    Council x Income x No. Fast Food
-
+'''
 # merging for obestiy rates by council
 data = pd.read_csv("/Users/ahila/Desktop/fit3179/data/csv/FastFood/Merged/Council Obesity FastFood.csv")
-
-
 
 # Add a new column for Total Fast Food Count
 data['Total Fast Food Count'] = data['KFC Count'] + data["McDonald's Count"] + data["Hungry Jack's Count"]
 
-data.to_csv("/Users/ahila/Desktop/fit3179/data/csv/FastFood/Merged/Council Obesity FastFood.csv", index=False)
-
+data.to_csv("/Users/ahila/Desktop/fit3179/data/csv/FastFood/Merged/Council Obesity FastFood.csv", index=False)'''
 
 
 
 # FOR EACH COUNCIL in Vic-Table 1 -> retrieve list of all suburbs and make long format
 # check council Vic-Table-1 exists for Suburbs VIC Full
 
-'''
+
 import pandas as pd
 
+'''
 # Paths to the CSV files
 file1_path = "/Users/ahila/Desktop/fit3179/data/csv/FastFood/Merged/Suburb Obesity FastFood.csv"
 file2_path = "/Users/ahila/Desktop/fit3179/data/csv/FastFood/Merged/Merged Income FastFood.csv"
@@ -138,11 +130,11 @@ vic_table_df = pd.read_csv('/Users/ahila/Desktop/fit3179/data/csv/Obesity/Vic-Ta
 suburbs_vic_full_df = pd.read_csv('data/csv/Suburbs/Suburbs VIC Full.csv')
 
 # Normalize 'LGA' and 'lgaregion' values for consistency
-vic_table_df['LGA'] = vic_table_df['LGA'].str.strip().str.lower()
+vic_table_df['lga'] = vic_table_df['lga'].str.strip().str.lower()
 suburbs_vic_full_df['lgaregion'] = suburbs_vic_full_df['lgaregion'].str.strip().str.lower()
 
 # Perform the merge using the normalized 'LGA' and 'lgaregion' columns
-merged_df = suburbs_vic_full_df.merge(vic_table_df, left_on='lgaregion', right_on='LGA', how='left')
+merged_df = suburbs_vic_full_df.merge(vic_table_df, left_on='lgaregion', right_on='lga', how='left')
 
 # Convert the 'suburb' column to uppercase
 merged_df['suburb'] = merged_df['suburb'].str.upper()
@@ -151,7 +143,7 @@ merged_df['suburb'] = merged_df['suburb'].str.upper()
 merged_df['lgaregion'] = merged_df['lgaregion'].str.title()
 
 # Select the desired columns, including 'LGA', 'suburb', and 'Adults - Obesity - ASR'
-result_columns = ['lgaregion', 'suburb', 'Adults - Obesity - ASR']
+result_columns = ['lgaregion', 'suburb', 'Adults - Obesity - ASR','Adults - Overweight/Obese - ASR' ]
 result_df = merged_df[result_columns]
 
 # Save the result to a new CSV file

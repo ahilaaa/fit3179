@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Obesity Rates vs Fast Food Locations",
+    "title": "Obesity Rates vs Fast Food Location Density",
     "width": "container",
     "height": 300,
     "data": {

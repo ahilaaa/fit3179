@@ -72,7 +72,7 @@
         "tooltip": [
           {"field": "properties.vic_loca_2", "type": "nominal", "title": "Suburb"},
           {"field": "council", "type": "nominal", "title": "Council"},
-          {"field": "obesity_rate", "type": "quantitative", "title": "Obesity Rate"}
+          {"field": "obesity_rate", "type": "quantitative", "title": "Obesity Rate (%)"}
         ]
       }
     }

@@ -25,3 +25,7 @@ https://www.vu.edu.au/mitchell-institute/australian-health-tracker-series/obesit
 WARNING!!
 
 Council - Obesity and Council - Income have SLIGHT variations in spelling (e.g Casey vs Casey - North and Casey - South). Obesity data (ABS national survey) has its own variation in council classification which is different to the Suburbs Data (mathew proctor)
+
+Vic-Table 1 Council names have been modified slightly:
+- assume Grampians = Southern Grampians and Northern Grampians (using same ASR rates)
+- Colac Otaway -> Colac - Otoway
