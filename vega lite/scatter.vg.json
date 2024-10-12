@@ -1,19 +1,24 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Median Income vs. Obesity Rates (%)",
-  "width": 600,
+  "width": "container",
   "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/csv/FastFood/Merged/Merged%20Council.csv",
     "format": {"type": "csv"}
   },
+  "transform": [
+    {
+      "filter": "datum['Median taxable income 2021-22'] > 0 && datum['Adults - Obesity - ASR'] > 0"
+    }
+  ],
   "mark": "point",
   "encoding": {
     "x": {
       "field": "Median taxable income 2021-22",
       "type": "quantitative",
       "title": "Median Taxable Income",
-      "scale": { "domain": [30000, 80000] }
+      "scale": { "domain": [40000, 80000] }
     },
     "y": {
       "field": "Adults - Obesity - ASR",
@@ -41,5 +46,6 @@
     ]
   }
 }
+
 
   
