@@ -40,7 +40,7 @@
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/topojson/victoria.json",
+        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/topojson/victoria%20graticules.json",
         "format": {"type": "topojson", "feature": "suburb-2-vic"}
       },
       "mark": {"type": "geoshape", "fill": "lightgray", "strokeWidth": 0.3},
@@ -52,7 +52,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/topojson/victoria.json",
+        "url": "https://raw.githubusercontent.com/ahilaaa/fit3179/refs/heads/main/data/topojson/victoria%20graticules.json",
         "format": {"type": "topojson", "feature": "suburb-2-vic"}
       },
       "transform": [
