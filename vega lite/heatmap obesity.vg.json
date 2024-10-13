@@ -2,8 +2,10 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
         "text": "Obesity and Overweight Rates (%) vs Fast Food Location Density",
-        "fontSize": 15,
-        "offset": 15 
+        "fontSize": 14,
+        "offset": 15,
+        "color": "#434343",
+        "font": "Verdana"
       },
     "width": "container",
     "height": 300,

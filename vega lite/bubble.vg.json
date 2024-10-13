@@ -2,8 +2,10 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
         "text": "Median Income, Fast Food Location Density and Population: Victoria",
-        "fontSize": 15,
-        "offset": 15  
+        "fontSize": 14,
+        "offset": 15,
+        "color": "#434343",
+        "font": "Verdana"
       },
     "width": "container",
     "height": 300,
@@ -45,7 +47,7 @@
       "stroke": "black",
       "strokeWidth": 1,
       "color": {
-    "expr": "selectionVar === 'McDonald\\'s Count' ? '#ffdd00' : selectionVar === 'Hungry Jack\\'s Count' ? 'orange' : selectionVar === 'KFC Count' ? '#red' : '#9757e6'"
+    "expr": "selectionVar === 'McDonald\\'s Count' ? '#ffdd00' : selectionVar === 'Hungry Jack\\'s Count' ? 'orange' : selectionVar === 'KFC Count' ? 'red' : '#9757e6'"
   }
     },
     "encoding": {

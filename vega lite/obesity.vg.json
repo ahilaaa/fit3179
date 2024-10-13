@@ -4,8 +4,10 @@
   "height": 550,
   "title": {
         "text": "Overweight and Obesity Rates by Council: Victoria",
-        "fontSize": 15,
-        "offset": 15 
+        "fontSize": 14,
+        "offset": 15,
+        "color": "#434343",
+        "font": "Verdana" 
       },
   "params": [
     {
