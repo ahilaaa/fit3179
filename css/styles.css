@@ -27,11 +27,13 @@ img {
 
 
 footer {
-    text-align: center;       /* Center the text */
-    font-size: 12px;          /* Adjust the font size */
-    padding: 0px;            /* Add some padding */
+    text-align: center;       
+    font-size: 12px;         
+    padding: 0px;          
     position: relative;       /* Adjusts the position at the bottom */
     bottom: 0;
+    color: #434343;  
+    font-family: Verdana, Helvetica, sans-serif;
 }
 
 
