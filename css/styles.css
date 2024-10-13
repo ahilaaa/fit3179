@@ -70,6 +70,22 @@ footer {
     font-size: 14px;
 }
 
+.banner-container {
+    text-align: center; /* Center align the banner */
+    margin: 20px 0; /* Add spacing around the banner */
+  }
+  
+.banner {
+display: flex;
+justify-content: center; /* Ensure images are centered */
+gap: 10px; /* Add space between images */
+}
+
+.banner img {
+width: 33%; /* Each image takes one-third of the banner width */
+height: auto; /* Keep the aspect ratio */
+}
+  
 
 /* font for SELECT parameter */
 input[type="range"], 
