@@ -31,9 +31,6 @@ Vic-Table 1 Council names have been modified slightly:
 - Colac Otaway -> Colac - Otoway
 - Casey - North,Casey - South --> Casey (data has been aggregated)
 
-- data source has different definitions of which council matches which suburb , e.g suburb ARARAT is located in council gippsland??
-- Merged Council has small councils removed (population = 1000)
-
 
 
 
